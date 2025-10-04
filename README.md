@@ -9,17 +9,44 @@ git clone git@github.com:Siiir/2025_11c_02_6week.git
 cd 2025_11c_02_6week
 ```
 
-### Create Python3 virtual environment
+### Create Python virtual environment
+
+#### Linux/macOS (bash)
 ```bash
 python3 -m venv venv/
-./venv/bin/pip install -r requirements.txt
+source ./venv/bin/activate
+pip install -r requirements.txt
 ```
 
-### Install the git hooks (Linux script)
+#### Windows (PowerShell)
+```powershell
+# Create virtual environment
+python -m venv venv
+# Install dependencies (using venv Python directly)
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+### Install the git hooks
+
+#### Linux/macOS (bash)
 ```bash
 source ./venv/bin/activate
 pre-commit install
 pre-commit install --hook-type commit-msg
+```
+
+#### Windows (Command Prompt)
+```bat
+venv\Scripts\activate.bat
+pre-commit install
+pre-commit install --hook-type commit-msg
+```
+
+#### Windows (PowerShell)
+```powershell
+# Install pre-commit hooks using venv executables directly
+.\venv\Scripts\pre-commit.exe install
+.\venv\Scripts\pre-commit.exe install --hook-type commit-msg
 ```
 
 ## Contributing
