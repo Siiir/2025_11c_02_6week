@@ -4,7 +4,6 @@
 
 ### Clone this repository
 ```shell
-https://github.com/Siiir/
 git clone git@github.com:Siiir/2025_11c_02_6week.git
 cd 2025_11c_02_6week
 ```
