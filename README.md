@@ -1,8 +1,19 @@
 # 6week project
 
+## Quick repo config for PJATK PCs
+This will work iff Python 3 is installed and aliased as `python3`.
+
+```bat
+python3 -m venv venv/
+.\venv\Scripts\activate.bat
+pip install -r requirements.txt
+pre-commit install
+pre-commit install --hook-type commit-msg
+```
+
 ## Quick Start
 
-### Clone this repository
+### Clone this repository (ssh version)
 ```shell
 git clone git@github.com:Siiir/2025_11c_02_6week.git
 cd 2025_11c_02_6week
@@ -17,7 +28,7 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### Windows (PowerShell)
+#### Windows (PowerShell / Command Prompt)
 ```powershell
 # Create virtual environment
 python -m venv venv
