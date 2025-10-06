@@ -8,14 +8,15 @@ repos:
         args: ['--maxkb=10240'] # 10 MB
         exclude: '(^Library/|^Temp/|^Build/|^Logs/|^UserSettings/|\.unitypackage$)'
         stages: [pre-commit]
-  - repo: local
-    hooks:
-      - id: dotnet-format
-        name: dotnet-format (staged .cs only)
-        entry: bash -c 'staged=$(git diff --cached --name-only --diff-filter=ACM | grep -E "\.cs$" || true); [ -z "$staged" ] && exit 0; incs=$(echo "$staged" | sed "s#^./##" | paste -sd, -); command -v dotnet >/dev/null || exit 0; dotnet format --include "$incs" --folder || true; git add $(git diff --name-only) || true; exit 0'
-        language: system
-        pass_filenames: false
-        stages: [pre-commit]
+  # - repo: local
+  #   hooks:
+  #     - id: dotnet-format
+  #       name: dotnet-format
+  #       entry: dotnet
+  #       args: ["format"]
+  #       language: system
+  #       pass_filenames: false
+  #       stages: [pre-commit]
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v4.2.0
     hooks:
