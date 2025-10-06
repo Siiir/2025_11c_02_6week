@@ -2,9 +2,11 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
+      # - id: trailing-whitespace
+      # - id: end-of-file-fixer
       - id: check-added-large-files
+        args: ['--maxkb=10240'] # 10 MB
+        exclude: '(^Library/|^Temp/|^Build/|^Logs/|^UserSettings/|\.unitypackage$)'
 
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v4.2.0
