@@ -4,7 +4,7 @@
 This will work iff Python 3 is installed and aliased as `python3`.
 
 ```bat
-python3 -m venv venv/
+python -m venv venv/
 .\venv\Scripts\activate.bat
 pip install -r requirements.txt
 pre-commit install
