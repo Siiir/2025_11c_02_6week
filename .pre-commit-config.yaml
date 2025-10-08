@@ -8,6 +8,9 @@ repos:
         args: ['--maxkb=10240'] # 10 MB
         exclude: '(^Library/|^Temp/|^Build/|^Logs/|^UserSettings/|\.unitypackage$)'
         stages: [pre-commit]
+  # Setting up this hook is much more difficult then I thought.
+  # Let's not do it for now or watch some tutorial.
+  #
   # - repo: local
   #   hooks:
   #     - id: dotnet-format
