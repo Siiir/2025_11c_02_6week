@@ -7,6 +7,6 @@ public class RespawningOnDeath : Mortal
     // Methods
     public override void Die()
     {
-        this.gameObject.transform.position = this.respawnTransform.position;
+        this.transform.position = this.respawnTransform.position;
     }
 }
