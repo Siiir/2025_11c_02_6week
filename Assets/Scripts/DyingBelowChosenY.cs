@@ -14,12 +14,12 @@ public class DyingBelowChosenY : MonoBehaviour
     
     private void Awake()
     {
-        this._mortal = this.gameObject.GetComponent<Mortal>();
+        this._mortal = this.GetComponent<Mortal>();
     }
 
     private void Update()
     {
-        if (this.gameObject.transform.position.y < DieWhenBelow)
+        if (this.transform.position.y < DieWhenBelow)
         {
             this._mortal.Die();
         }
