@@ -15,6 +15,8 @@ namespace Player
 
         [SerializeField] private float coyoteTime = 0.4f;
         private float _coyoteTimeCounter;
+        
+        [SerializeField] private float surfaceNormal = 0.5f;
 
         private void Awake()
         {
@@ -60,7 +62,7 @@ namespace Player
         private void OnCollisionEnter2D(Collision2D collision)
         {
             Vector3 normal = collision.GetContact(0).normal;
-            if (normal.y > 0.5f)
+            if (normal.y > surfaceNormal)
             {
                 _isGrounded = true;
             }
