@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6526155699810992982}
   - component: {fileID: 1392135124395718596}
   - component: {fileID: 5058866206054950177}
+  - component: {fileID: 3941306467738382659}
   m_Layer: 0
   m_Name: NehringHeroExperimental
   m_TagString: Untagged
@@ -192,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28752eec034d439380f2f31aa61cad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RespawningOnDeath
-  prefabForRespawning: {fileID: 4199061641044660731}
   respawnTransform: {fileID: 0}
+  respawnSound: {fileID: 8300000, guid: a358db11564e9d44e970bea5a42b0979, type: 3}
 --- !u!114 &5058866206054950177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,3 +207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aff08298f3e4ada9d51b22e11e15232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MortalWithFullAgony
+--- !u!114 &3941306467738382659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199061641044660731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da572b75184e435297fb494aedef783c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::death_processors.Terminable
