@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 5058866206054950177}
   - component: {fileID: 3941306467738382659}
   - component: {fileID: 3210463986104730648}
+  - component: {fileID: 1895983329713684159}
+  - component: {fileID: 7108638459594212182}
   m_Layer: 0
   m_Name: NehringHeroExperimental
   m_TagString: Untagged
@@ -318,3 +320,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1895983329713684159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199061641044660731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1546b93c96fa46d42972b0594a9abad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::aggregators.SceneBound
+--- !u!114 &7108638459594212182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199061641044660731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4183e1568fff34ab60dace3025a4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::aggregators.HeroLifeCycle
