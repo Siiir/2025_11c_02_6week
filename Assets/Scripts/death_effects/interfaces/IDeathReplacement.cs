@@ -1,7 +1,7 @@
 ﻿namespace death_effects.interfaces
 {
-    public interface IDeathReplacement
+    public interface IDeathReplacement: IDeathImpl
     {
-        public void DoDeath();
+
     }
 }

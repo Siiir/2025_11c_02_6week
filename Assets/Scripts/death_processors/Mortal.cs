@@ -3,13 +3,22 @@ using UnityEngine;
 
 namespace death_processors
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Mortal : MonoBehaviour
     {
+        [SerializeField] private AudioClip deathSound;
+        private AudioSource _audioSource;
+
+        private void Awake()
+        {
+            this._audioSource = this.GetComponent<AudioSource>();
+        }
         public virtual void Die()
         {
             var deathReplacement = this.GetComponent<IDeathReplacement>();
             if (deathReplacement == null)
             {
+                this._audioSource.PlayOneShot(this.deathSound);
                 // disable collider, which will push this entity into the void
                 // the void has its own ways to terminate entities
                 var collider = this.GetComponent<Collider>();

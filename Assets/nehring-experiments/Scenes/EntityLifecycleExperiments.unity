@@ -443,6 +443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TNE-Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 5058866206054950177, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c537e4c72303fd4692f847cf70355d0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
