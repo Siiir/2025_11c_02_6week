@@ -18,10 +18,8 @@ namespace Player
         
         [SerializeField] private float surfaceNormal = 0.5f;
         
-        //
         public bool FacingRight { get; private set; } = true;
         private SpriteRenderer _spriteRenderer;
-        // -- Filipustyyy
 
         private void Awake()
         {
