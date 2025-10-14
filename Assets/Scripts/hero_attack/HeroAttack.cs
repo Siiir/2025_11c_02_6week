@@ -1,8 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HeroAttack : MonoBehaviour
 {
+    [SerializeField] private GameObject attackArea;
+    private AttackArea attackAreaScript;
+    private Player.BasicPlayerMovement movement;
     
     [SerializeField] private float attackCooldown = 0.5f;   // interval between attacks
     [SerializeField] private float attackTime = 0.25f;  // how long does the hitbox linger
@@ -13,13 +15,8 @@ public class HeroAttack : MonoBehaviour
     private float attackTimer = 0.0f;
     private float cooldownTimer = 0.0f;
     
-    private GameObject attackArea;
-    private AttackArea attackAreaScript;
-    private Player.BasicPlayerMovement movement;
-    
     void Start()
     {
-        attackArea = transform.GetChild(0).gameObject;
         attackAreaScript = attackArea.GetComponent<AttackArea>();
         
         if (attackAreaScript != null)
