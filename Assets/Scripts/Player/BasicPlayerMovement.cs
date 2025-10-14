@@ -17,15 +17,26 @@ namespace Player
         private float _coyoteTimeCounter;
         
         [SerializeField] private float surfaceNormal = 0.5f;
+        
+        public bool FacingRight { get; private set; } = true;
+        private SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Update()
         {
-            _xInput = Input.GetAxis("Horizontal");
+            _xInput = Input.GetAxisRaw("Horizontal");
+            
+            // Update Facing direction
+            if (_xInput > 0) FacingRight = true;
+            else if (_xInput < 0) FacingRight = false;
+            if (_spriteRenderer != null)
+                _spriteRenderer.flipX = !FacingRight;
+            // -- Filipustyyy
 
             if (_isGrounded)
             {

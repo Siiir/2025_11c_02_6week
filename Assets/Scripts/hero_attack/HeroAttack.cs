@@ -6,7 +6,8 @@ public class HeroAttack : MonoBehaviour
     
     [SerializeField] private float attackCooldown = 0.5f;   // interval between attacks
     [SerializeField] private float attackTime = 0.25f;  // how long does the hitbox linger
-    // [SerializeField] private float attackDamage = 5.0f;
+    [SerializeField] private float attackOffsetX = 1.0f;    // horizontal offset of attack hitbox
+    [SerializeField] private float attackOffsetY = 0.0f;
     
     private bool attacking = false;
     private float attackTimer = 0.0f;
@@ -14,20 +15,20 @@ public class HeroAttack : MonoBehaviour
     
     private GameObject attackArea;
     private AttackArea attackAreaScript;
+    private Player.BasicPlayerMovement movement;
     
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
         attackAreaScript = attackArea.GetComponent<AttackArea>();
         
         if (attackAreaScript != null)
-            attackAreaScript.SetOwner(gameObject); // Suicide prevention (hopefully)
+            attackAreaScript.SetOwner(gameObject); // Suicide prevention
         attackArea.SetActive(false);
+        
+        movement = GetComponent<Player.BasicPlayerMovement>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (cooldownTimer > 0)
@@ -49,17 +50,22 @@ public class HeroAttack : MonoBehaviour
                 attackTimer = 0.0f;
             }
         }
+        
+        if (attackArea != null && movement != null)
+        {
+            Vector3 offset = new Vector3(
+                movement.FacingRight ? attackOffsetX : -attackOffsetX,
+                attackOffsetY,
+                0
+            );
+            attackArea.transform.localPosition = offset;
+        }
     }
 
     private void Attack()
     {
-        // Debug.Log("ATTACK!");
         attacking = true;
         attackArea.SetActive(true);
         attackTimer = 0.0f;
-        
-        Vector3 scale = attackArea.transform.localScale;
-        scale.x = Mathf.Abs(scale.x) * Mathf.Sign(transform.localScale.x);
-        attackArea.transform.localScale = scale;
     }
 }
