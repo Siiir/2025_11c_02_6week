@@ -36,8 +36,6 @@ namespace Player
             else if (_xInput < 0) FacingRight = false;
             if (_spriteRenderer != null)
                 _spriteRenderer.flipX = !FacingRight;
-            // -- Filipustyyy
-
             if (_isGrounded)
             {
                 _coyoteTimeCounter = coyoteTime;
