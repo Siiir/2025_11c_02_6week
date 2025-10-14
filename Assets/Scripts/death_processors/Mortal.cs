@@ -4,6 +4,7 @@ using UnityEngine;
 namespace death_processors
 {
     [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(Terminable))]
     public class Mortal : MonoBehaviour
     {
         [SerializeField] private AudioClip deathSound;
