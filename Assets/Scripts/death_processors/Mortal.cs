@@ -4,7 +4,11 @@ using UnityEngine;
 
 namespace death_processors
 {
-    [RequireComponent(typeof(Terminable), typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource))]
+    // While `Terminable` might not be directly used in this class,
+    // it ensures that mortal entities are cleaned up properly when they die.
+    // This can prevent resource leaks and maintain game performance.
+    [RequireComponent(typeof(Terminable))]
     public class Mortal : MonoBehaviour, IDamagableComponent
     {
         public bool IsAlive { get; private set; } = true;
