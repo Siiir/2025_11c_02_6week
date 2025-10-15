@@ -7,25 +7,12 @@ namespace death_effects
     [RequireComponent(typeof(Terminable))]
     public class TerminatesInVoid : MonoBehaviour
     {
-    
         // Fields
-    
-        private const String BottomDeathLineName = "BottomDeathLine";
-    
-        private static readonly Lazy<float> TerminateWhenBelow = new Lazy<float>(() =>
-        {
-            GameObject bottomDeathLine = GameObject.Find(BottomDeathLineName);
-            if (bottomDeathLine == null)
-            {
-                throw new Exception($"{BottomDeathLineName} not found in the simulation!");
-            }
-            return bottomDeathLine.transform.position.y;
-        });
-    
+
         private Terminable _terminable;
 
         // Methods
-    
+
         private void Awake()
         {
             this._terminable = this.GetComponent<Terminable>();
@@ -33,7 +20,11 @@ namespace death_effects
 
         private void Update()
         {
-            if (this.transform.position.y < TerminateWhenBelow.Value)
+            if (Single.IsNaN(BottomWorldBorder.Y))
+            {
+                throw new Exception("BottomWorldBorder.Y is not set");
+            }
+            if (this.transform.position.y < BottomWorldBorder.Y)
             {
                 this._terminable.Terminate();
             }

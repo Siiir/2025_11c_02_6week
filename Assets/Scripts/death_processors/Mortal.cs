@@ -1,39 +1,51 @@
+using damage;
 using death_effects.interfaces;
 using UnityEngine;
 
 namespace death_processors
 {
-    [RequireComponent(typeof(AudioSource))]
-    public class Mortal : MonoBehaviour
+    [RequireComponent(typeof(Terminable), typeof(AudioSource))]
+    public class Mortal : MonoBehaviour, IDamagableComponent
     {
+        public bool IsAlive { get; private set; } = true;
         [SerializeField] private AudioClip deathSound;
+        private Collider2D _collider;
         private AudioSource _audioSource;
 
         private void Awake()
         {
+            this._collider = GetComponent<Collider2D>();
             this._audioSource = this.GetComponent<AudioSource>();
         }
+
         public virtual void Die()
         {
             var deathReplacement = this.GetComponent<IDeathReplacement>();
-            if (deathReplacement == null)
+            if (deathReplacement != null)
             {
+                deathReplacement.DoDeath();
+            }
+            else // Default death implementation
+            {
+                this.IsAlive = false;
                 this._audioSource.PlayOneShot(this.deathSound);
                 // disable collider, which will push this entity into the void
                 // the void has its own ways to terminate entities
-                var collider = this.GetComponent<Collider>();
-                if (collider != null)
-                {
-                    collider.enabled = false;
-                }
+                this._collider.enabled = false;
+
                 // here entity's controller should be disabled
                 // making it unable to avoid death by falling into the void
                 // this could be programmed more creatively by making this entity "Kinematic",
                 // while preserving its collider or changing collision layer
             }
-            else
+        }
+
+        public void RestoreDamage()
+        {
+            this.IsAlive = true;
+            if (this._collider != null)
             {
-                deathReplacement.DoDeath();
+                this._collider.enabled = true;
             }
         }
     }
