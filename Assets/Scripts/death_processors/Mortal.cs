@@ -1,5 +1,6 @@
 using damage;
 using death_effects.interfaces;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace death_processors
@@ -11,10 +12,16 @@ namespace death_processors
     [RequireComponent(typeof(Terminable))]
     public class Mortal : MonoBehaviour, IDamagableComponent
     {
-        public bool IsAlive { get; private set; } = true;
+        // Constants
         [SerializeField] private AudioClip deathSound;
         private Collider2D _collider;
         private AudioSource _audioSource;
+
+        // Variables
+        public bool IsAlive { get; private set; } = true;
+        public bool IsDead => !this.IsAlive;
+
+        private static bool _warnedAboutAttemptToDieForSecondTime = false;
 
         private void Awake()
         {
@@ -24,6 +31,20 @@ namespace death_processors
 
         public virtual void Die()
         {
+            if (this.IsDead)
+            {
+                if (!_warnedAboutAttemptToDieForSecondTime)
+                {
+                    _warnedAboutAttemptToDieForSecondTime = true;
+                    Debug.LogWarning($@"
+                        Attempted to kill an already dead entity: {this}.
+                        This warning message is shown once per simulation."
+                    );
+                }
+
+                return; // Prevent retriggering death on a dead entity.
+            }
+
             var deathReplacement = this.GetComponent<IDeathReplacement>();
             if (deathReplacement != null)
             {
