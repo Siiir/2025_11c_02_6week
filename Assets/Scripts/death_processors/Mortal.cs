@@ -22,7 +22,7 @@ namespace death_processors
                 this._audioSource.PlayOneShot(this.deathSound);
                 // disable collider, which will push this entity into the void
                 // the void has its own ways to terminate entities
-                var collider = this.GetComponent<Collider>();
+                var collider = this.GetComponent<Collider2D>();
                 if (collider != null)
                 {
                     collider.enabled = false;
