@@ -5,6 +5,8 @@ namespace Player
     [RequireComponent(typeof(Rigidbody2D))]
     public class BasicPlayerMovement : MonoBehaviour
     {
+        [SerializeField] private string groundTag = "Ground";
+        
         private Rigidbody2D _rb;
         private float _xInput;
         [SerializeField] private float speed = 5;
@@ -61,7 +63,7 @@ namespace Player
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Ground"))
+            if (collision.gameObject.CompareTag(groundTag))
             {
                 Vector3 normal = collision.GetContact(0).normal;
                 if (normal.y > surfaceNormal)
@@ -73,7 +75,7 @@ namespace Player
 
         private void OnCollisionExit2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Ground"))
+            if (collision.gameObject.CompareTag(groundTag))
             {
                 _isGrounded = false;
             }
