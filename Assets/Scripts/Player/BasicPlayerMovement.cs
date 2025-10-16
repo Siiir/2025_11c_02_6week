@@ -61,16 +61,22 @@ namespace Player
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Vector3 normal = collision.GetContact(0).normal;
-            if (normal.y > surfaceNormal)
+            if (collision.gameObject.CompareTag("Ground"))
             {
-                _isGrounded = true;
+                Vector3 normal = collision.GetContact(0).normal;
+                if (normal.y > surfaceNormal)
+                {
+                    _isGrounded = true;
+                }
             }
         }
 
         private void OnCollisionExit2D(Collision2D collision)
         {
-            _isGrounded = false;
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                _isGrounded = false;
+            }
         }
     }
 }
