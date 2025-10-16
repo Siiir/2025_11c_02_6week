@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3210463986104730648}
   - component: {fileID: 1895983329713684159}
   - component: {fileID: 7108638459594212182}
+  - component: {fileID: 1008076464177905993}
   m_Layer: 0
   m_Name: NehringHeroExperimental
   m_TagString: Untagged
@@ -344,3 +345,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4183e1568fff34ab60dace3025a4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::aggregators.HeroLifeCycle
+--- !u!114 &1008076464177905993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199061641044660731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38280ade80f84cc088ad7337f18b4b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::damage.Hurtable
+  fullHealth: 3
+  health: 0
+  hurtSound: {fileID: 8300000, guid: 65eec7b2f289ef841b38f141a61751f9, type: 3}

@@ -3,7 +3,6 @@ using UnityEngine;
 public class HeroAttack : MonoBehaviour
 {
     [SerializeField] private GameObject attackArea;
-    private AttackArea attackAreaScript;
     private Player.BasicPlayerMovement movement;
     
     [SerializeField] private float attackCooldown = 0.5f;   // interval between attacks
@@ -17,11 +16,8 @@ public class HeroAttack : MonoBehaviour
     
     void Start()
     {
-        attackAreaScript = attackArea.GetComponent<AttackArea>();
-        
-        if (attackAreaScript != null)
-            attackAreaScript.SetOwner(gameObject); // Suicide prevention
-        attackArea.SetActive(false);
+        if (attackArea != null)
+            attackArea.SetActive(false);
         
         movement = GetComponent<Player.BasicPlayerMovement>();
     }
@@ -42,7 +38,8 @@ public class HeroAttack : MonoBehaviour
             if (attackTimer >= attackTime)
             {
                 attacking = false;
-                attackArea.SetActive(false);
+                if (attackArea != null)
+                    attackArea.SetActive(false);
                 cooldownTimer = attackCooldown;
                 attackTimer = 0.0f;
             }
@@ -62,7 +59,8 @@ public class HeroAttack : MonoBehaviour
     private void Attack()
     {
         attacking = true;
-        attackArea.SetActive(true);
+        if (attackArea != null)
+            attackArea.SetActive(true);
         attackTimer = 0.0f;
     }
 }
