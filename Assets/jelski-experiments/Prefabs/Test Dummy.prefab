@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5762060773282231596}
   - component: {fileID: 6429874951936536246}
   - component: {fileID: 6109295073849431648}
+  - component: {fileID: 6039988640724319136}
   m_Layer: 0
   m_Name: Test Dummy
   m_TagString: Untagged
@@ -316,3 +317,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1546b93c96fa46d42972b0594a9abad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::aggregators.SceneBound
+--- !u!114 &6039988640724319136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046314951672303528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38280ade80f84cc088ad7337f18b4b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::damage.Hurtable
+  fullHealth: 50
+  health: 0
+  hurtSound: {fileID: 0}

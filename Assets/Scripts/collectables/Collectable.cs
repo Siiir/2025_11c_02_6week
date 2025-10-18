@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(CollectableTriggerHandler))]

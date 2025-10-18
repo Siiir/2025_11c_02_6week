@@ -1,66 +1,99 @@
+using Player;
 using UnityEngine;
 
+
+[RequireComponent(typeof(BasicPlayerMovement))]
 public class HeroAttack : MonoBehaviour
 {
+    [Header("Attack Settings")]
     [SerializeField] private GameObject attackArea;
-    private Player.BasicPlayerMovement movement;
-    
-    [SerializeField] private float attackCooldown = 0.5f;   // interval between attacks
-    [SerializeField] private float attackTime = 0.25f;  // how long does the hitbox linger
-    [SerializeField] private float attackOffsetX = 1.0f;    // horizontal offset of attack hitbox
-    [SerializeField] private float attackOffsetY = 0.0f;
-    
-    private bool attacking = false;
-    private float attackTimer = 0.0f;
-    private float cooldownTimer = 0.0f;
-    
-    void Start()
+    [SerializeField] private uint attackDamage = 10;
+    [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private float attackDuration = 0.2f;
+
+    [Header("Attack Offset")]
+    [SerializeField] private float offsetX = 1.0f;
+    [SerializeField] private float offsetY = 0.0f;
+
+    private BasicPlayerMovement movement;
+    private AttackArea attackAreaComponent;
+
+    private bool isAttacking;
+    private float attackTimer;
+    private float cooldownTimer;
+
+    private void Awake()
     {
-        if (attackArea != null)
-            attackArea.SetActive(false);
-        
-        movement = GetComponent<Player.BasicPlayerMovement>();
+        movement = GetComponent<BasicPlayerMovement>();
+
+        if (attackArea == null)
+        {
+            Debug.LogError($"{nameof(HeroAttack)}: Attack area not assigned!", this);
+            enabled = false;
+            return;
+        }
+
+        attackArea.SetActive(false);
+        attackAreaComponent = attackArea.GetComponent<AttackArea>();
+
+        if (attackAreaComponent == null)
+            Debug.LogWarning($"{nameof(HeroAttack)}: AttackArea component not found on attackArea object.");
     }
-    
-    void Update()
+
+    private void Update()
+    {
+        HandleCooldown();
+        HandleAttackInput();
+        HandleAttackState();
+        UpdateAttackPosition();
+    }
+
+    private void HandleCooldown()
     {
         if (cooldownTimer > 0)
             cooldownTimer -= Time.deltaTime;
-        
-        if (Input.GetKeyDown(KeyCode.F) && cooldownTimer <= 0)
-        {
-            Attack();
-        }
-
-        if (attacking)
-        {
-            attackTimer += Time.deltaTime;
-            if (attackTimer >= attackTime)
-            {
-                attacking = false;
-                if (attackArea != null)
-                    attackArea.SetActive(false);
-                cooldownTimer = attackCooldown;
-                attackTimer = 0.0f;
-            }
-        }
-        
-        if (attackArea != null && movement != null)
-        {
-            Vector3 offset = new Vector3(
-                movement.FacingRight ? attackOffsetX : -attackOffsetX,
-                attackOffsetY,
-                0
-            );
-            attackArea.transform.localPosition = offset;
-        }
     }
 
-    private void Attack()
+    private void HandleAttackInput()
     {
-        attacking = true;
-        if (attackArea != null)
-            attackArea.SetActive(true);
-        attackTimer = 0.0f;
+        if (!isAttacking && cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.F))
+            StartAttack();
+    }
+
+    private void HandleAttackState()
+    {
+        if (!isAttacking) return;
+
+        attackTimer += Time.deltaTime;
+
+        if (attackTimer >= attackDuration)
+            EndAttack();
+    }
+
+    private void UpdateAttackPosition()
+    {
+        if (movement == null || attackArea == null) return;
+
+        float direction = movement.FacingRight ? 1f : -1f;
+        attackArea.transform.localPosition = new Vector3(offsetX * direction, offsetY, 0f);
+    }
+
+    private void StartAttack()
+    {
+        isAttacking = true;
+        attackTimer = 0f;
+
+        attackArea.SetActive(true);
+        attackAreaComponent?.SetDamage(attackDamage);
+        
+    }
+
+    private void EndAttack()
+    {
+        isAttacking = false;
+        cooldownTimer = attackCooldown;
+        attackTimer = 0f;
+
+        attackArea.SetActive(false);
     }
 }

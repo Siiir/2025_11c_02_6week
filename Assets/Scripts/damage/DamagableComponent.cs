@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace damage
+﻿namespace damage
 {
     public interface IDamagableComponent
     {
