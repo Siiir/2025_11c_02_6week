@@ -1,5 +1,4 @@
-﻿using System;
-using damage;
+﻿using damage;
 using death_effects.interfaces;
 using death_processors;
 using UnityEngine;
