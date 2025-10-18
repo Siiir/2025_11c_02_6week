@@ -19,7 +19,6 @@ public class AttackArea : MonoBehaviour
         
         if (target != null)
         {
-            Debug.Log("Hit: " + collision.name);
             target.ReceiveDamage(damage);
         }
         

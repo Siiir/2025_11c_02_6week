@@ -709,7 +709,7 @@ PrefabInstance:
     - target: {fileID: 6039988640724319136, guid: 7b2a3110157b4ba40b4f74b30886f476, type: 3}
       propertyPath: hurtSound
       value: 
-      objectReference: {fileID: 8300000, guid: 9b417cdfec36b9043ace1e3b51babbbd, type: 3}
+      objectReference: {fileID: 8300000, guid: 65eec7b2f289ef841b38f141a61751f9, type: 3}
     - target: {fileID: 6046314951672303528, guid: 7b2a3110157b4ba40b4f74b30886f476, type: 3}
       propertyPath: m_Name
       value: Test Dummy
@@ -775,6 +775,14 @@ PrefabInstance:
       propertyPath: respawnTransform
       value: 
       objectReference: {fileID: 1159007776}
+    - target: {fileID: 9123268634178346507, guid: 16f23ba1a12da414a8c8f0cdcf56c63c, type: 3}
+      propertyPath: attackCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123268634178346507, guid: 16f23ba1a12da414a8c8f0cdcf56c63c, type: 3}
+      propertyPath: attackDuration
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
