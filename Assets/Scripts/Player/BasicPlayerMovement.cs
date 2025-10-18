@@ -65,13 +65,34 @@ namespace Player
         {
             if (collision.gameObject.CompareTag(groundTag))
             {
-                Vector3 normal = collision.GetContact(0).normal;
-                if (normal.y > surfaceNormal)
+                foreach (var contact in collision.contacts)
                 {
-                    _isGrounded = true;
+                    if (contact.normal.y > surfaceNormal)
+                    {
+                        _isGrounded = true;
+                        return;
+                    }
                 }
             }
         }
+        
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag(groundTag))
+            {
+                foreach (var contact in collision.contacts)
+                {
+                    if (contact.normal.y > surfaceNormal)
+                    {
+                        _isGrounded = true;
+                        return;
+                    }
+                }
+
+                _isGrounded = false;
+            }
+        }
+
 
         private void OnCollisionExit2D(Collision2D collision)
         {
