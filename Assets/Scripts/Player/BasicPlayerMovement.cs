@@ -2,18 +2,20 @@ using UnityEngine;
 
 namespace Player
 {
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
     public class BasicPlayerMovement : MonoBehaviour
     {
         [SerializeField] private string groundTag = "Ground";
         
         private Rigidbody2D _rb;
+        private AudioSource _audioSource;
         private float _xInput;
         [SerializeField] private float speed = 5;
 
         private bool _performJump;
         private bool _isGrounded;
         [SerializeField] private float jumpForce = 5;
+        [SerializeField] private AudioClip jumpSound;
 
         [SerializeField] private float coyoteTime = 0.4f;
         private float _coyoteTimeCounter;
@@ -26,6 +28,7 @@ namespace Player
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            _audioSource = GetComponent<AudioSource>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
@@ -50,6 +53,7 @@ namespace Player
             if (Input.GetButtonDown("Jump") && _coyoteTimeCounter > 0)
             {
                 _performJump = true;
+                _audioSource.PlayOneShot(jumpSound);
             }
 
             if (Input.GetButtonUp("Jump"))
