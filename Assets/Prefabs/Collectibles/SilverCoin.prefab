@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1074341016630273717
+--- !u!1 &6087305256900097704
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6493155954385196657}
-  - component: {fileID: 8965682718194455896}
-  - component: {fileID: 3055004193049374979}
-  - component: {fileID: 4213960072962932830}
-  - component: {fileID: 1778949499278389848}
+  - component: {fileID: 8403618562726747318}
+  - component: {fileID: 8959451082304369886}
+  - component: {fileID: 5665459478931404136}
+  - component: {fileID: 6728877354284745339}
+  - component: {fileID: 5148829580576212106}
   m_Layer: 0
-  m_Name: CoinGolden
+  m_Name: SilverCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6493155954385196657
+--- !u!4 &8403618562726747318
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074341016630273717}
+  m_GameObject: {fileID: 6087305256900097704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 1.5, z: 0}
+  m_LocalPosition: {x: -3.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8965682718194455896
+--- !u!212 &8959451082304369886
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074341016630273717}
+  m_GameObject: {fileID: 6087305256900097704}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1486534941499973156, guid: b38650b30fcdae34b90f804a98505ae8, type: 3}
-  m_Color: {r: 1, g: 0.8431373, b: 0, a: 1}
+  m_Sprite: {fileID: -4976079567497121232, guid: 37c89dda24012db4699fb889f18273c3, type: 3}
+  m_Color: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,13 +93,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3055004193049374979
+--- !u!58 &5665459478931404136
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074341016630273717}
+  m_GameObject: {fileID: 6087305256900097704}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -129,28 +129,28 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.39
---- !u!114 &4213960072962932830
+--- !u!114 &6728877354284745339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074341016630273717}
+  m_GameObject: {fileID: 6087305256900097704}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5034082ef2b853541ab09ae2d2004d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableTriggerHandler
---- !u!114 &1778949499278389848
+--- !u!114 &5148829580576212106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074341016630273717}
+  m_GameObject: {fileID: 6087305256900097704}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db9c6ace0501d8740be0d333d9a01611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectable
-  collectableSo: {fileID: 11400000, guid: b33eb54b564d4484bafe25c23e8c640a, type: 2}
+  collectableSo: {fileID: 11400000, guid: f02bb9c58ab7b0f44aaa7c93ec2b3f2d, type: 2}
