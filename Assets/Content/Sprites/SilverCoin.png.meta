@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ca446a86c8b9544fbffc4e147659596
+guid: 37c89dda24012db4699fb889f18273c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7219227084822820854
-    second: Sword Idle 02_0
+      213: -4976079567497121232
+    second: SilverCoin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sword Idle 02_0
+      name: SilverCoin_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
-        width: 20
-        height: 9
+        x: 2
+        y: 1
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a08c148273720db90800000000000000
-      internalID: -7219227084822820854
+      spriteID: 032314d6ff961fab0800000000000000
+      internalID: -4976079567497121232
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sword Idle 02_0: -7219227084822820854
+      SilverCoin_0: -4976079567497121232
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
