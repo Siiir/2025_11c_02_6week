@@ -6,6 +6,10 @@ namespace Player
     [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
     public class BasicPlayerMovement : MonoBehaviour
     {
+        private static readonly int IsFalling = Animator.StringToHash("IsFalling");
+        private static readonly int IsJumping = Animator.StringToHash("IsJumping");
+        private static readonly int XInputAbs = Animator.StringToHash("XInputAbs");
+        
         [SerializeField] private string groundTag = "Ground";
         
         private Rigidbody2D _rb;
@@ -77,19 +81,19 @@ namespace Player
 
             if (_rb.linearVelocity.y > threshold)
             {
-                _animator.SetBool("IsJumping", true);
+                _animator.SetBool(IsJumping, true);
                 return;
             }
             
             if (_rb.linearVelocity.y < -threshold)
             {
-                _animator.SetBool("IsJumping", false);
-                _animator.SetBool("IsFalling", true);
+                _animator.SetBool(IsJumping, false);
+                _animator.SetBool(IsFalling, true);
                 return;
             }
             
-            _animator.SetBool("IsJumping", false);
-            _animator.SetBool("IsFalling", false);
+            _animator.SetBool(IsJumping, false);
+            _animator.SetBool(IsFalling, false);
         }
 
         private void FixedUpdate()
@@ -106,7 +110,7 @@ namespace Player
 
             if (_animator != null)
             {
-                _animator.SetFloat("XInputAbs", Mathf.Abs(_xInput));
+                _animator.SetFloat(XInputAbs, Mathf.Abs(_xInput));
             }
         }
 

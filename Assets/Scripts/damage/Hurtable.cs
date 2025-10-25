@@ -15,6 +15,7 @@ namespace damage
         private Mortal _mortal;
         private AudioSource _audioSource;
         private Animator _animator;
+        private static readonly int Hurt = Animator.StringToHash("Hurt");
 
         private void Awake()
         {
@@ -39,7 +40,7 @@ namespace damage
             CheckHealth();
             if (_animator != null)
             {
-                _animator.SetTrigger("Hurt");
+                _animator.SetTrigger(Hurt);
             }
         }
 
