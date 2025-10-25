@@ -48,6 +48,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3050745296618217788, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6675153
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050745296618217788, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Size.y
+      value: 0.85168666
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050745296618217788, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.017893314
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050745296618217788, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08084574
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050745296618217788, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050745296618217788, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -55,6 +79,26 @@ PrefabInstance:
     - target: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924207721092459051, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 402b13ee595d3144694cf83298fcad75, type: 3}
+    - target: {fileID: 6924207721092459051, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924207721092459051, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924207721092459051, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924207721092459051, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90,6 +134,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8749336615760339548}
+    - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 709170926573203657}
   m_SourcePrefab: {fileID: 100100000, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
 --- !u!4 &6095702219143390893 stripped
 Transform:
@@ -306,6 +353,28 @@ MonoBehaviour:
   fullHealth: 100
   health: 0
   hurtSound: {fileID: 8300000, guid: 65eec7b2f289ef841b38f141a61751f9, type: 3}
+--- !u!95 &709170926573203657
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158522073812093743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7654ae295a326bc449a8844ba72d152d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &7890335859353183680
 PrefabInstance:
   m_ObjectHideFlags: 0

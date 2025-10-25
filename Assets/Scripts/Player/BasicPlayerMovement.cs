@@ -1,3 +1,4 @@
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 namespace Player
@@ -5,6 +6,10 @@ namespace Player
     [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
     public class BasicPlayerMovement : MonoBehaviour
     {
+        private static readonly int IsFalling = Animator.StringToHash("IsFalling");
+        private static readonly int IsJumping = Animator.StringToHash("IsJumping");
+        private static readonly int XInputAbs = Animator.StringToHash("XInputAbs");
+        
         [SerializeField] private string groundTag = "Ground";
         
         private Rigidbody2D _rb;
@@ -24,12 +29,14 @@ namespace Player
         
         public bool FacingRight { get; private set; } = true;
         private SpriteRenderer _spriteRenderer;
+        private Animator _animator;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _audioSource = GetComponent<AudioSource>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -41,6 +48,7 @@ namespace Player
             else if (_xInput < 0) FacingRight = false;
             if (_spriteRenderer != null)
                 _spriteRenderer.flipX = !FacingRight;
+            
             if (_isGrounded)
             {
                 _coyoteTimeCounter = coyoteTime;
@@ -60,6 +68,32 @@ namespace Player
             {
                 _coyoteTimeCounter = 0;
             }
+
+            if (_animator != null)
+            {
+                SetAnimationState();
+            }
+        }
+
+        private void SetAnimationState()
+        {
+            const float threshold = 0.1f;
+
+            if (_rb.linearVelocity.y > threshold)
+            {
+                _animator.SetBool(IsJumping, true);
+                return;
+            }
+            
+            if (_rb.linearVelocity.y < -threshold)
+            {
+                _animator.SetBool(IsJumping, false);
+                _animator.SetBool(IsFalling, true);
+                return;
+            }
+            
+            _animator.SetBool(IsJumping, false);
+            _animator.SetBool(IsFalling, false);
         }
 
         private void FixedUpdate()
@@ -70,7 +104,13 @@ namespace Player
             {
                 _performJump = false;
                 _isGrounded = false;
+                
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpForce);
+            }
+
+            if (_animator != null)
+            {
+                _animator.SetFloat(XInputAbs, Mathf.Abs(_xInput));
             }
         }
 
