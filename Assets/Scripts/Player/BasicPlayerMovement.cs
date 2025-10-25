@@ -1,3 +1,4 @@
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 namespace Player
@@ -24,12 +25,14 @@ namespace Player
         
         public bool FacingRight { get; private set; } = true;
         private SpriteRenderer _spriteRenderer;
+        private Animator _animator;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _audioSource = GetComponent<AudioSource>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -41,6 +44,7 @@ namespace Player
             else if (_xInput < 0) FacingRight = false;
             if (_spriteRenderer != null)
                 _spriteRenderer.flipX = !FacingRight;
+            
             if (_isGrounded)
             {
                 _coyoteTimeCounter = coyoteTime;
@@ -60,6 +64,29 @@ namespace Player
             {
                 _coyoteTimeCounter = 0;
             }
+            
+            SetAnimationState();
+        }
+
+        private void SetAnimationState()
+        {
+            const float threshold = 0.1f;
+
+            if (_rb.linearVelocity.y > threshold)
+            {
+                _animator.SetBool("IsJumping", true);
+                return;
+            }
+            
+            if (_rb.linearVelocity.y < -threshold)
+            {
+                _animator.SetBool("IsFalling", true);
+                _animator.SetBool("IsFalling", true);
+                return;
+            }
+            
+            _animator.SetBool("IsJumping", false);
+            _animator.SetBool("IsFalling", false);
         }
 
         private void FixedUpdate()
@@ -70,8 +97,11 @@ namespace Player
             {
                 _performJump = false;
                 _isGrounded = false;
+                
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpForce);
             }
+            
+            _animator.SetFloat("XInputAbs", Mathf.Abs(_xInput));
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

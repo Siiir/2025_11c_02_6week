@@ -17,6 +17,7 @@ public class HeroAttack : MonoBehaviour
 
     private BasicPlayerMovement movement;
     private AttackArea attackAreaComponent;
+    private Animator _animator;
 
     private bool isAttacking;
     private float attackTimer;
@@ -25,6 +26,7 @@ public class HeroAttack : MonoBehaviour
     private void Awake()
     {
         movement = GetComponent<BasicPlayerMovement>();
+        _animator = GetComponent<Animator>();
 
         if (attackArea == null)
         {
@@ -86,6 +88,7 @@ public class HeroAttack : MonoBehaviour
         attackArea.SetActive(true);
         attackAreaComponent?.SetDamage(attackDamage);
         
+        _animator.SetTrigger("IsAttacking");
     }
 
     private void EndAttack()
