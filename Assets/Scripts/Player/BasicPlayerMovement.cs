@@ -64,8 +64,11 @@ namespace Player
             {
                 _coyoteTimeCounter = 0;
             }
-            
-            SetAnimationState();
+
+            if (_animator != null)
+            {
+                SetAnimationState();
+            }
         }
 
         private void SetAnimationState()
@@ -100,8 +103,11 @@ namespace Player
                 
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpForce);
             }
-            
-            _animator.SetFloat("XInputAbs", Mathf.Abs(_xInput));
+
+            if (_animator != null)
+            {
+                _animator.SetFloat("XInputAbs", Mathf.Abs(_xInput));
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

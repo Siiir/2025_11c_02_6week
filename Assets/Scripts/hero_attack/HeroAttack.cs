@@ -87,8 +87,11 @@ public class HeroAttack : MonoBehaviour
 
         attackArea.SetActive(true);
         attackAreaComponent?.SetDamage(attackDamage);
-        
-        _animator.SetTrigger("IsAttacking");
+
+        if (_animator != null)
+        {
+            _animator.SetTrigger("IsAttacking");
+        }
     }
 
     private void EndAttack()
