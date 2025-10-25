@@ -83,7 +83,7 @@ namespace Player
             
             if (_rb.linearVelocity.y < -threshold)
             {
-                _animator.SetBool("IsFalling", true);
+                _animator.SetBool("IsJumping", false);
                 _animator.SetBool("IsFalling", true);
                 return;
             }
