@@ -7,8 +7,14 @@ namespace death_effects
         public override void Terminate()
         {
             // Avoid re-checking in at the same checkpoint upon respawn
-            respawnTransform.GetComponent<CheckPoint>()
-                .SuppressNextCheckInFor(gameObject);
+            var checkPoint = respawnTransform.GetComponent<CheckPoint>();
+            // Since respawn might not be a checkpoint
+            if (checkPoint != null)
+            {
+                checkPoint
+                    .SuppressNextCheckInFor(gameObject);
+            }
+
             base.Terminate();
         }
     }
