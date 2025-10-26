@@ -88,13 +88,13 @@ PrefabInstance:
       addedObject: {fileID: 2528382077120169527}
     - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6899766659811633236}
-    - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6941822617762966311}
     - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7005736296401617200}
+    - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8498679344977673606}
   m_SourcePrefab: {fileID: 100100000, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
 --- !u!1 &1191482126592802090 stripped
 GameObject:
@@ -265,20 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1546b93c96fa46d42972b0594a9abad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::aggregators.SceneBound
---- !u!114 &6899766659811633236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191482126592802090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28752eec034d439380f2f31aa61cad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::death_effects.Respawning
-  respawnTransform: {fileID: 0}
-  respawnSound: {fileID: 8300000, guid: a358db11564e9d44e970bea5a42b0979, type: 3}
 --- !u!114 &6941822617762966311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +292,20 @@ MonoBehaviour:
   fullHealth: 100
   health: 0
   hurtSound: {fileID: 8300000, guid: 65eec7b2f289ef841b38f141a61751f9, type: 3}
+--- !u!114 &8498679344977673606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191482126592802090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d69550ba3534583b2453d2b5b213c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::death_effects.RespawnsAtCheckPoint
+  respawnTransform: {fileID: 0}
+  respawnSound: {fileID: 0}
 --- !u!4 &4253981058857734312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2040897722235067193, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}

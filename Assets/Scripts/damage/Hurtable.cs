@@ -8,7 +8,10 @@ namespace damage
     {
         // Configurable parameters
         [SerializeField] private uint fullHealth = 100;
-        [SerializeField] [Tooltip("Initial Health")] private uint health = 0; // 0 means full health
+
+        [SerializeField] [Tooltip("Initial Health")]
+        private uint health = 0; // 0 means full health
+
         [SerializeField] private AudioClip hurtSound;
 
         // Other components
@@ -21,6 +24,7 @@ namespace damage
             {
                 health = fullHealth;
             }
+
             _mortal = GetComponent<Mortal>();
             _audioSource = GetComponent<AudioSource>();
         }

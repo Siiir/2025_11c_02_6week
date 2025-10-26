@@ -1,6 +1,5 @@
 using damage;
 using death_effects.interfaces;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace death_processors

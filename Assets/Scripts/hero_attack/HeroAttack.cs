@@ -1,18 +1,19 @@
 using Player;
 using UnityEngine;
 
-
 [RequireComponent(typeof(BasicPlayerMovement))]
 public class HeroAttack : MonoBehaviour
 {
-    [Header("Attack Settings")]
-    [SerializeField] private GameObject attackArea;
+    [Header("Attack Settings")] [SerializeField]
+    private GameObject attackArea;
+
     [SerializeField] private uint attackDamage = 10;
     [SerializeField] private float attackCooldown = 0.5f;
     [SerializeField] private float attackDuration = 0.2f;
 
-    [Header("Attack Offset")]
-    [SerializeField] private float offsetX = 1.0f;
+    [Header("Attack Offset")] [SerializeField]
+    private float offsetX = 1.0f;
+
     [SerializeField] private float offsetY = 0.0f;
 
     private BasicPlayerMovement movement;
@@ -85,7 +86,6 @@ public class HeroAttack : MonoBehaviour
 
         attackArea.SetActive(true);
         attackAreaComponent?.SetDamage(attackDamage);
-        
     }
 
     private void EndAttack()

@@ -6,7 +6,7 @@ namespace Player
     public class BasicPlayerMovement : MonoBehaviour
     {
         [SerializeField] private string groundTag = "Ground";
-        
+
         private Rigidbody2D _rb;
         private AudioSource _audioSource;
         private float _xInput;
@@ -19,9 +19,9 @@ namespace Player
 
         [SerializeField] private float coyoteTime = 0.4f;
         private float _coyoteTimeCounter;
-        
+
         [SerializeField] private float surfaceNormal = 0.5f;
-        
+
         public bool FacingRight { get; private set; } = true;
         private SpriteRenderer _spriteRenderer;
 
@@ -35,7 +35,7 @@ namespace Player
         private void Update()
         {
             _xInput = Input.GetAxisRaw("Horizontal");
-            
+
             // Update Facing direction
             if (_xInput > 0) FacingRight = true;
             else if (_xInput < 0) FacingRight = false;
@@ -88,7 +88,7 @@ namespace Player
                 }
             }
         }
-        
+
         private void OnCollisionStay2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag(groundTag))
