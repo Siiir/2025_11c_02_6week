@@ -2015,15 +2015,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4643661767312360814, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.08
+      value: -14.31
       objectReference: {fileID: 0}
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.27
+      value: 1.94
       objectReference: {fileID: 0}
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.z
