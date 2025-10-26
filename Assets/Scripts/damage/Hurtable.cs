@@ -17,6 +17,8 @@ namespace damage
         // Other components
         private Mortal _mortal;
         private AudioSource _audioSource;
+        private Animator _animator;
+        private static readonly int Hurt = Animator.StringToHash("Hurt");
 
         private void Awake()
         {
@@ -27,6 +29,7 @@ namespace damage
 
             _mortal = GetComponent<Mortal>();
             _audioSource = GetComponent<AudioSource>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -39,6 +42,10 @@ namespace damage
             _audioSource.PlayOneShot(damageSound ?? hurtSound);
             health = (damage >= health) ? 0 : health - damage;
             CheckHealth();
+            if (_animator != null)
+            {
+                _animator.SetTrigger(Hurt);
+            }
         }
 
         private void CheckHealth()
