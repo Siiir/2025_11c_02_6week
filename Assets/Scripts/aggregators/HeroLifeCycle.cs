@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace aggregators
 {
-    [RequireComponent(typeof(SceneBound), typeof(Respawning), typeof(Hurtable))]
+    [RequireComponent(typeof(RespawnsAtCheckPoint), typeof(SceneBound), typeof(Hurtable))]
     public class HeroLifeCycle : MonoBehaviour
     {
     }
