@@ -10,11 +10,15 @@ namespace effects
         // Configurable fields
         [SerializeField] private uint damagePerTick = 1;
         [SerializeField] private float tickInterval = 2.5f;
+
         [SerializeField] private AudioClip poisoningSound;
+
         // Constants
         private float _timeBeforeFirstTick;
         private Hurtable _hurtable;
+
         private Mortal _mortal;
+
         // Variables
         private float _timeTillNextTick;
 

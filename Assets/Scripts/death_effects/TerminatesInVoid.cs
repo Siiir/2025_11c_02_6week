@@ -24,6 +24,7 @@ namespace death_effects
             {
                 throw new Exception("BottomWorldBorder.Y is not set");
             }
+
             if (this.transform.position.y < BottomWorldBorder.Y)
             {
                 this._terminable.Terminate();

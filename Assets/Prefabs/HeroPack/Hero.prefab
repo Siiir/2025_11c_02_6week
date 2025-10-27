@@ -8,13 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1204285789581749059, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fca38ee65485c0441a4546fec88e6ca0, type: 3}
     - target: {fileID: 2040897722235067193, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2040897722235067193, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 6.95
       objectReference: {fileID: 0}
     - target: {fileID: 2040897722235067193, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       propertyPath: m_LocalPosition.z
@@ -127,9 +131,6 @@ PrefabInstance:
       addedObject: {fileID: 2004457292075946903}
     - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4372269864454123546}
-    - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6139577021513295263}
     - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       insertIndex: -1
@@ -137,6 +138,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
       insertIndex: -1
       addedObject: {fileID: 709170926573203657}
+    - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7788217756333714235}
   m_SourcePrefab: {fileID: 100100000, guid: c48ea3c6dd90a5f4985537ce4ff07ded, type: 3}
 --- !u!4 &6095702219143390893 stripped
 Transform:
@@ -312,20 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1546b93c96fa46d42972b0594a9abad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::aggregators.SceneBound
---- !u!114 &4372269864454123546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9158522073812093743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28752eec034d439380f2f31aa61cad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::death_effects.Respawning
-  respawnTransform: {fileID: 0}
-  respawnSound: {fileID: 8300000, guid: a358db11564e9d44e970bea5a42b0979, type: 3}
 --- !u!114 &6139577021513295263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +365,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7788217756333714235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158522073812093743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d69550ba3534583b2453d2b5b213c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::death_effects.RespawnsAtCheckPoint
+  respawnTransform: {fileID: 0}
+  respawnSound: {fileID: 8300000, guid: a358db11564e9d44e970bea5a42b0979, type: 3}
 --- !u!1001 &7890335859353183680
 PrefabInstance:
   m_ObjectHideFlags: 0
