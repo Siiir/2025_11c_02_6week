@@ -11,8 +11,7 @@ namespace death_effects
             // Since respawn might not be a checkpoint
             if (checkPoint != null)
             {
-                checkPoint
-                    .SuppressNextCheckInFor(gameObject);
+                checkPoint.SuppressNextCheckInFor(gameObject);
             }
 
             base.Terminate();

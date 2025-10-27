@@ -16,10 +16,10 @@ namespace Player
         private bool _isGrounded;
         [SerializeField] private float jumpForce = 5;
         [SerializeField] private AudioClip jumpSound;
-        
+
         [SerializeField] private int maxJumps = 2;
         [SerializeField] private int jumpsRemaining;
-        
+
         [SerializeField] private float coyoteTime = 0.4f;
         private float _coyoteTimeCounter;
 
@@ -27,7 +27,7 @@ namespace Player
 
         public bool FacingRight { get; private set; } = true;
         private SpriteRenderer _spriteRenderer;
-        
+
         private Animator _animator;
         private static readonly int IsFalling = Animator.StringToHash("IsFalling");
         private static readonly int IsJumping = Animator.StringToHash("IsJumping");
@@ -39,7 +39,7 @@ namespace Player
             _audioSource = GetComponent<AudioSource>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
-            
+
             jumpsRemaining = maxJumps;
         }
 
@@ -52,7 +52,7 @@ namespace Player
             else if (_xInput < 0) FacingRight = false;
             if (_spriteRenderer != null)
                 _spriteRenderer.flipX = !FacingRight;
-            
+
             if (_isGrounded)
             {
                 _coyoteTimeCounter = coyoteTime;
@@ -99,14 +99,14 @@ namespace Player
                 _animator.SetBool(IsFalling, false);
                 return;
             }
-            
+
             if (_rb.linearVelocity.y < -threshold)
             {
                 _animator.SetBool(IsJumping, false);
                 _animator.SetBool(IsFalling, true);
                 return;
             }
-            
+
             _animator.SetBool(IsJumping, false);
             _animator.SetBool(IsFalling, false);
         }
@@ -119,7 +119,7 @@ namespace Player
             {
                 _performJump = false;
                 _isGrounded = false;
-                
+
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpForce);
             }
 
@@ -157,6 +157,7 @@ namespace Player
                         return;
                     }
                 }
+
                 _isGrounded = false;
             }
         }
