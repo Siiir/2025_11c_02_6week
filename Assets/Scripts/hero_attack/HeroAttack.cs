@@ -1,7 +1,6 @@
 using Player;
 using UnityEngine;
 
-
 [RequireComponent(typeof(BasicPlayerMovement))]
 public class HeroAttack : MonoBehaviour
 {
@@ -12,13 +11,14 @@ public class HeroAttack : MonoBehaviour
     [SerializeField] private float attackCooldown = 0.5f;
     [SerializeField] private float attackDuration = 0.3f;
 
-    [Header("Attack Offset")]
-    [SerializeField] private float offsetX = 0.6f;
+    [Header("Attack Offset")] [SerializeField]
+    private float offsetX = 0.6f;
+
     [SerializeField] private float offsetY = -0.1f;
 
     private BasicPlayerMovement movement;
     private AttackArea attackAreaComponent;
-    
+
     private Animator _animator;
     private static readonly int Attack = Animator.StringToHash("Attack");
 

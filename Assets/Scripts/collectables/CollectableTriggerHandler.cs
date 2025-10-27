@@ -3,11 +3,11 @@ using UnityEngine;
 public class CollectableTriggerHandler : MonoBehaviour
 {
     private Collectable _collectable;
-    
+
     private Animator _animator;
     private static readonly int Collected = Animator.StringToHash("Collected");
     private bool _isCollected;
-    
+
     private void Awake()
     {
         _collectable = GetComponent<Collectable>();
@@ -18,7 +18,7 @@ public class CollectableTriggerHandler : MonoBehaviour
     {
         if (_isCollected)
             return;
-        
+
         if (other.CompareTag("Player"))
         {
             _isCollected = true;
