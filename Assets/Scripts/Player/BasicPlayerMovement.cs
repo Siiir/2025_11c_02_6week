@@ -1,4 +1,3 @@
-using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 namespace Player
@@ -9,9 +8,9 @@ namespace Player
         private static readonly int IsFalling = Animator.StringToHash("IsFalling");
         private static readonly int IsJumping = Animator.StringToHash("IsJumping");
         private static readonly int XInputAbs = Animator.StringToHash("XInputAbs");
-        
+
         [SerializeField] private string groundTag = "Ground";
-        
+
         private Rigidbody2D _rb;
         private AudioSource _audioSource;
         private float _xInput;
@@ -24,9 +23,9 @@ namespace Player
 
         [SerializeField] private float coyoteTime = 0.4f;
         private float _coyoteTimeCounter;
-        
+
         [SerializeField] private float surfaceNormal = 0.5f;
-        
+
         public bool FacingRight { get; private set; } = true;
         private SpriteRenderer _spriteRenderer;
         private Animator _animator;
@@ -42,13 +41,13 @@ namespace Player
         private void Update()
         {
             _xInput = Input.GetAxisRaw("Horizontal");
-            
+
             // Update Facing direction
             if (_xInput > 0) FacingRight = true;
             else if (_xInput < 0) FacingRight = false;
             if (_spriteRenderer != null)
                 _spriteRenderer.flipX = !FacingRight;
-            
+
             if (_isGrounded)
             {
                 _coyoteTimeCounter = coyoteTime;
@@ -84,14 +83,14 @@ namespace Player
                 _animator.SetBool(IsJumping, true);
                 return;
             }
-            
+
             if (_rb.linearVelocity.y < -threshold)
             {
                 _animator.SetBool(IsJumping, false);
                 _animator.SetBool(IsFalling, true);
                 return;
             }
-            
+
             _animator.SetBool(IsJumping, false);
             _animator.SetBool(IsFalling, false);
         }
@@ -104,7 +103,7 @@ namespace Player
             {
                 _performJump = false;
                 _isGrounded = false;
-                
+
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpForce);
             }
 
@@ -128,7 +127,7 @@ namespace Player
                 }
             }
         }
-        
+
         private void OnCollisionStay2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag(groundTag))

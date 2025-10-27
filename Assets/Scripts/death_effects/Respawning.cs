@@ -27,8 +27,8 @@ namespace death_effects
             {
                 component.RestoreDamage();
             }
+
             this.transform.position = this.respawnTransform.position;
         }
-        
     }
 }
