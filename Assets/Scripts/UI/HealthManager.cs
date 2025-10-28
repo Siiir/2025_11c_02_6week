@@ -1,10 +1,10 @@
 using UnityEngine;
-using damage; // your Hurtable namespace
+using damage;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Hurtable hurtable;      // assign in Inspector
-    [SerializeField] private RectTransform fillPanel; // the inner fill bar
+    [SerializeField] private Hurtable hurtable;
+    [SerializeField] private RectTransform fillPanel;
 
     private float maxWidth;
 
@@ -15,8 +15,7 @@ public class HealthBar : MonoBehaviour
             Debug.LogError("Missing references on HealthBar!");
             return;
         }
-
-        // Remember the bar's original width (full health)
+        
         maxWidth = fillPanel.sizeDelta.x;
         UpdateBar();
     }
