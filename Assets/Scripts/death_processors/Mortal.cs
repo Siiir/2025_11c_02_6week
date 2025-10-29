@@ -36,11 +36,9 @@ namespace death_processors
                 if (!_warnedAboutAttemptToDieForSecondTime)
                 {
                     _warnedAboutAttemptToDieForSecondTime = true;
-                    var stackTrace = new System.Diagnostics.StackTrace(true);
                     Debug.LogWarning(Regex.Replace($@"
                         Attempted to kill an already dead entity: {this}.
                         This warning message is shown once per simulation."
-                        // + "\nStack Trace: {stackTrace}"
                         , @"(?m)^[ \t]+", ""));
                 }
 
