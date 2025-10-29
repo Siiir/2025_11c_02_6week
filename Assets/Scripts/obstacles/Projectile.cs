@@ -21,10 +21,9 @@ namespace obstacles
         private void Awake()
         {
             this._mortal = this.GetComponent<Mortal>();
-            this.GetComponent<Terminable>();
             this._collider = this.GetComponent<Collider2D>();
-            // Fix for current collision detection
-            Debug.Assert(_collider.isTrigger, "Projectile must be triggered by the trigger collider");
+            // Ensure collision detection will work.
+            Debug.Assert(_collider.isTrigger, "Projectile collider must be set to trigger.");
         }
 
         private void OnTriggerEnter2D(Collider2D other)
