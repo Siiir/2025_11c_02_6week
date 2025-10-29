@@ -12,11 +12,13 @@ namespace obstacles
 
         // Constants
         [SerializeField] private bool disableRendering = true;
+        [SerializeField] private float initMinDispenseInterval = 0.5f;
         [SerializeField] private float minDispenseInterval = 2.0f;
         [SerializeField] private float maxDispenseInterval = 2.4f;
 
         // Variables
-        [Tooltip("Initial dispense cooldown in seconds. NaN to randomize on start.")] [SerializeField]
+        [Tooltip("Initial Dispense Cooldown (s). `NaN` to randomize on start.")]
+        [SerializeField]
         private float dispenseCooldown = float.NaN;
 
         // Components
@@ -26,7 +28,7 @@ namespace obstacles
         {
             if (float.IsNaN(dispenseCooldown))
             {
-                ResetDispenseCooldown();
+                InitDispenseCooldown();
             }
 
             // Components
@@ -59,6 +61,11 @@ namespace obstacles
             // Apply initial force/velocity
             var rb = projectile.GetComponent<Rigidbody2D>();
             rb.linearVelocity = (Vector2)transform.right * 10.0f;
+        }
+
+        private void InitDispenseCooldown()
+        {
+            dispenseCooldown = Random.Range(initMinDispenseInterval, maxDispenseInterval);
         }
 
         private void ResetDispenseCooldown()

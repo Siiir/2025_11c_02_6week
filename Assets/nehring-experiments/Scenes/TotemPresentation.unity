@@ -330,6 +330,8 @@ MonoBehaviour:
   speed: 10
   jumpForce: 10
   jumpSound: {fileID: 8300000, guid: fca38ee65485c0441a4546fec88e6ca0, type: 3}
+  maxJumps: 2
+  jumpsRemaining: 0
   coyoteTime: 0.4
   surfaceNormal: 0.5
 --- !u!1001 &617519697
@@ -685,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606415544511504638, guid: 9fdf928a93cef9947b3da746b9c49fa1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.11
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: 8606415544511504638, guid: 9fdf928a93cef9947b3da746b9c49fa1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -791,7 +793,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.77
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -965,6 +967,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1008076464177905993, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
+      propertyPath: fullHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1392135124395718596, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
       propertyPath: respawnTransform
       value: 
@@ -973,13 +979,21 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2369602895705898614, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
+      propertyPath: respawnSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a358db11564e9d44e970bea5a42b0979, type: 3}
+    - target: {fileID: 2369602895705898614, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
+      propertyPath: respawnTransform
+      value: 
+      objectReference: {fileID: 3291885700762822263}
     - target: {fileID: 3291885701811831505, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.79
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3291885701811831505, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.14
+      value: 4.23
       objectReference: {fileID: 0}
     - target: {fileID: 3291885701811831505, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1017,7 +1031,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: TNE-Hero
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4199061641044660731, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1392135124395718596, guid: 9f27a224cf382494bbd4eeccaecf0796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

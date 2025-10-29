@@ -18,13 +18,16 @@ namespace death_effects
             this._terminable = this.GetComponent<Terminable>();
         }
 
-        private void Update()
+        private void Start()
         {
             if (Single.IsNaN(BottomWorldBorder.Y))
             {
                 throw new Exception("BottomWorldBorder.Y is not set");
             }
+        }
 
+        private void Update()
+        {
             if (this.transform.position.y < BottomWorldBorder.Y)
             {
                 this._terminable.Terminate();

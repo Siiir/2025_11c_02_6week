@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using damage;
 using death_effects.interfaces;
 using UnityEngine;
@@ -35,10 +36,12 @@ namespace death_processors
                 if (!_warnedAboutAttemptToDieForSecondTime)
                 {
                     _warnedAboutAttemptToDieForSecondTime = true;
-                    Debug.LogWarning($@"
+                    var stackTrace = new System.Diagnostics.StackTrace(true);
+                    Debug.LogWarning(Regex.Replace($@"
                         Attempted to kill an already dead entity: {this}.
                         This warning message is shown once per simulation."
-                    );
+                        // + "\nStack Trace: {stackTrace}"
+                        , @"(?m)^[ \t]+", ""));
                 }
 
                 return; // Prevent retriggering death on a dead entity.
