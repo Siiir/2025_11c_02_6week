@@ -11,6 +11,7 @@ namespace death_processors
             {
                 effect.DoPreDeath();
             }
+
             base.Die();
             foreach (var effect in this.GetComponents<IPostDeath>())
             {
