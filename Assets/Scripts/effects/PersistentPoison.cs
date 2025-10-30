@@ -30,7 +30,7 @@ namespace effects
             _mortal = GetComponent<Mortal>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (_mortal.IsAlive)
             {
