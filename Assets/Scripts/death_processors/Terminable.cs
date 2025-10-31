@@ -5,7 +5,7 @@ namespace death_processors
 {
     public class Terminable : MonoBehaviour
     {
-        public virtual void Terminate()
+        public void Terminate()
         {
             var terminationRepl = this.GetComponent<ITerminationReplacement>();
             if (terminationRepl == null)
