@@ -6,7 +6,7 @@ using UnityEngine;
 namespace death_effects
 {
     [RequireComponent(typeof(Terminable), typeof(AudioSource))]
-    public class Respawning : MonoBehaviour, ITerminationReplacement
+    public abstract class Respawning : MonoBehaviour, ITerminationReplacement
     {
         // Fields
         [SerializeField] public Transform respawnTransform;
