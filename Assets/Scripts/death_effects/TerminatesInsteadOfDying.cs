@@ -1,5 +1,4 @@
-﻿using System;
-using death_effects.abstracts;
+﻿using death_effects.abstracts;
 using death_processors;
 using UnityEngine;
 

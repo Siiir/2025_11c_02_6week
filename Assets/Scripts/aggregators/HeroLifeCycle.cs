@@ -1,6 +1,4 @@
-using damage;
 using damage.hurting;
-using death_effects;
 using death_effects.respawning;
 using UnityEngine;
 

@@ -6,8 +6,7 @@ namespace aggregators
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(TerminatesInsteadOfDying), typeof(HitPoints))]
-    public class Totem: MonoBehaviour
+    public class Totem : MonoBehaviour
     {
-        
     }
 }

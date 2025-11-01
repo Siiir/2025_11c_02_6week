@@ -1,4 +1,3 @@
-using damage;
 using damage.hurting;
 using UnityEngine;
 

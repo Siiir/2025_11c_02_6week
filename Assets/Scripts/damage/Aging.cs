@@ -33,7 +33,7 @@ namespace damage
         {
             this.enabled = false;
         }
-        
+
         public void RestoreDamage()
         {
             currentAgeInSecs = 0.0f;

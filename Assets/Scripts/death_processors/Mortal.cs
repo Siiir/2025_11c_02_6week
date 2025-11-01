@@ -74,6 +74,7 @@ namespace death_processors
                 {
                     _rigidbody.bodyType = RigidbodyType2D.Dynamic;
                 }
+
                 transform.parent = null;
                 // here entity's controller should be disabled,
                 // making it unable to avoid death by falling into the void

@@ -17,8 +17,7 @@ namespace obstacles
         [SerializeField] private float maxDispenseInterval = 2.4f;
 
         // Variables
-        [Tooltip("Initial Dispense Cooldown (s). `NaN` to randomize on start.")]
-        [SerializeField]
+        [Tooltip("Initial Dispense Cooldown (s). `NaN` to randomize on start.")] [SerializeField]
         private float dispenseCooldown = float.NaN;
 
         // Components

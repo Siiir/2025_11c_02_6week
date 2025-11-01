@@ -78,6 +78,7 @@ namespace Player
                     _performJump = true;
                     jumpsRemaining--;
                 }
+
                 if (_performJump)
                 {
                     _audioSource.PlayOneShot(jumpSound);
@@ -176,7 +177,7 @@ namespace Player
                 _isGrounded = false;
             }
         }
-        
+
         public void DoPostDeath()
         {
             // Player should not be able to control character after death

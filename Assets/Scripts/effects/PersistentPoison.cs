@@ -1,5 +1,4 @@
-﻿using damage;
-using damage.hurting;
+﻿using damage.hurting;
 using death_processors;
 using UnityEngine;
 
