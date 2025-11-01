@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 6845112294275796519}
   - component: {fileID: 1808670836251938984}
   - component: {fileID: 6771350506013708294}
-  - component: {fileID: 7841534958596834781}
+  - component: {fileID: 1891966727524224725}
+  - component: {fileID: 8987620647985786257}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Ground
@@ -291,7 +292,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::death_processors.Mortal
   deathSound: {fileID: 0}
---- !u!114 &7841534958596834781
+--- !u!95 &1891966727524224725
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741135032384157396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8987620647985786257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,9 +323,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3741135032384157396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38280ade80f84cc088ad7337f18b4b14, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c4f9ed5b2c143499a6aefa52519c21e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::damage.Hurtable
-  fullHealth: 100
-  health: 0
+  m_EditorClassIdentifier: Assembly-CSharp::damage.hurting.Hurts
   hurtSound: {fileID: 8300000, guid: 9669f7c0796f61e458361b66a9e2ca40, type: 3}
+  hitPoints: {fileID: 0}

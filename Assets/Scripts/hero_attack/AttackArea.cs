@@ -1,4 +1,5 @@
 using damage;
+using damage.hurting;
 using UnityEngine;
 
 public class AttackArea : MonoBehaviour

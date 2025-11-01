@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Player
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource), typeof(AgonyfulMortal))]
     public class BasicPlayerMovement : MonoBehaviour, IDamagableComponent, IPostDeath
     {

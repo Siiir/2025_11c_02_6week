@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace damage
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(AgonyfulMortal))]
     public class Aging : MonoBehaviour, IDamagableComponent, IPostDeath
     {

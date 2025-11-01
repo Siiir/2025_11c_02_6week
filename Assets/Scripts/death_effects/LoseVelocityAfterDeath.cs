@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace death_effects
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(Rigidbody2D))]
     public class LoseVelocityAfterDeath : PostDeath
     {

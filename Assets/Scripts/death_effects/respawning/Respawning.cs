@@ -3,8 +3,9 @@ using death_effects.interfaces;
 using death_processors;
 using UnityEngine;
 
-namespace death_effects
+namespace death_effects.respawning
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(Terminable), typeof(AudioSource))]
     public abstract class Respawning : MonoBehaviour, ITerminationReplacement
     {

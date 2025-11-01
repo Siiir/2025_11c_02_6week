@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace death_processors
 {
+    [DisallowMultipleComponent]
     public class Terminable : MonoBehaviour
     {
         public void Terminate()

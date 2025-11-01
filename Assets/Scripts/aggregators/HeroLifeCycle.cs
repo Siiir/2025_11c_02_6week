@@ -1,10 +1,13 @@
 using damage;
+using damage.hurting;
 using death_effects;
+using death_effects.respawning;
 using UnityEngine;
 
 namespace aggregators
 {
-    [RequireComponent(typeof(RespawnsAtCheckPoint), typeof(SceneBound), typeof(Hurtable))]
+    [DisallowMultipleComponent]
+    [RequireComponent(typeof(RespawnsAtCheckPoint), typeof(SceneBound), typeof(DirectlyHurtable))]
     public class HeroLifeCycle : MonoBehaviour
     {
     }

@@ -1,21 +1,30 @@
+using System;
 using System.Text.RegularExpressions;
 using damage;
+using death_effects;
 using death_effects.interfaces;
 using UnityEngine;
 
 namespace death_processors
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(AudioSource))]
-    // While `Terminable` might not be directly used in this class,
+    // While technically `TerminatesInVoid` might not be necessary for all mortal entities,
     // it ensures that mortal entities are cleaned up properly when they die.
     // This can prevent resource leaks and maintain game performance.
-    [RequireComponent(typeof(Terminable))]
+    [RequireComponent(typeof(TerminatesInVoid))]
     public class Mortal : MonoBehaviour, IDamagableComponent
     {
         // Constants
         [SerializeField] private AudioClip deathSound;
-        private Collider2D _collider;
+
+        // Fetched Components - Obligatory
         private AudioSource _audioSource;
+
+        // Fetched Components - Optional
+        private Transform _parentTransform;
+        private Rigidbody2D _rigidbody;
+        private Collider2D[] _colliders;
 
         // Variables
         public bool IsAlive { get; private set; } = true;
@@ -25,8 +34,12 @@ namespace death_processors
 
         private void Awake()
         {
-            this._collider = GetComponent<Collider2D>();
+            // Obligatory components
+            this._parentTransform = this.transform.parent;
             this._audioSource = this.GetComponent<AudioSource>();
+            // Optional components
+            this._rigidbody = this.GetComponent<Rigidbody2D>();
+            this._colliders = GetComponentsInChildren<Collider2D>();
         }
 
         public virtual void Die()
@@ -54,11 +67,15 @@ namespace death_processors
             {
                 this.IsAlive = false;
                 this._audioSource.PlayOneShot(this.deathSound);
-                // disable collider, which will push this entity into the void
-                // the void has its own ways to terminate entities
-                this._collider.enabled = false;
-
-                // here entity's controller should be disabled
+                // disable colliders, which will push this entity into the void.
+                // The void has its own ways to terminate entities
+                Array.ForEach(_colliders, c => c.enabled = false);
+                if (_rigidbody.bodyType == RigidbodyType2D.Static)
+                {
+                    _rigidbody.bodyType = RigidbodyType2D.Dynamic;
+                }
+                transform.parent = null;
+                // here entity's controller should be disabled,
                 // making it unable to avoid death by falling into the void
                 // this could be programmed more creatively by making this entity "Kinematic",
                 // while preserving its collider or changing collision layer
@@ -68,10 +85,8 @@ namespace death_processors
         public void RestoreDamage()
         {
             this.IsAlive = true;
-            if (this._collider != null)
-            {
-                this._collider.enabled = true;
-            }
+            Array.ForEach(_colliders, c => c.enabled = true);
+            transform.parent = _parentTransform;
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using damage;
+using damage.hurting;
 using death_processors;
 using UnityEngine;
 
 namespace effects
 {
-    [RequireComponent(typeof(Hurtable), typeof(Mortal))]
+    [RequireComponent(typeof(DirectlyHurtable), typeof(Mortal))]
     public class PersistentPoison : MonoBehaviour
     {
         // Configurable fields
@@ -15,7 +16,7 @@ namespace effects
 
         // Constants
         private float _timeBeforeFirstTick;
-        private Hurtable _hurtable;
+        private DirectlyHurtable _directlyHurtable;
 
         private Mortal _mortal;
 
@@ -26,7 +27,7 @@ namespace effects
         {
             _timeBeforeFirstTick = tickInterval / 2;
             _timeTillNextTick = _timeBeforeFirstTick;
-            _hurtable = GetComponent<Hurtable>();
+            _directlyHurtable = GetComponent<DirectlyHurtable>();
             _mortal = GetComponent<Mortal>();
         }
 
@@ -49,7 +50,7 @@ namespace effects
 
         private void Tick()
         {
-            _hurtable.ReceiveDamage(damagePerTick, poisoningSound);
+            _directlyHurtable.ReceiveDamage(damagePerTick, poisoningSound);
         }
     }
 }
