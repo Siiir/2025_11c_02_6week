@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   groundTag: Ground
   speed: 5
-  jumpForce: 17
+  jumpForce: 20
   jumpSound: {fileID: 8300000, guid: fca38ee65485c0441a4546fec88e6ca0, type: 3}
   maxJumps: 2
   jumpsRemaining: 0
