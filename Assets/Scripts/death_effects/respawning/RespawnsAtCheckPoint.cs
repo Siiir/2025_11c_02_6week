@@ -1,6 +1,6 @@
 ﻿using interactibles;
 
-namespace death_effects
+namespace death_effects.respawning
 {
     public class RespawnsAtCheckPoint : Respawning
     {

@@ -3,8 +3,9 @@ using UnityEngine;
 
 namespace damage
 {
-    [RequireComponent(typeof(Mortal), typeof(AudioSource))]
-    public class Hurtable : MonoBehaviour, IDamagableComponent
+    [DisallowMultipleComponent]
+    [RequireComponent(typeof(Mortal))]
+    public class HitPoints : MonoBehaviour, IDamagableComponent
     {
         // Configurable parameters
         [SerializeField] private uint fullHealth = 100;
@@ -12,13 +13,8 @@ namespace damage
         [SerializeField] [Tooltip("Initial Health")]
         private uint health = 0; // 0 means full health
 
-        [SerializeField] private AudioClip hurtSound;
-
         // Other components
         private Mortal _mortal;
-        private AudioSource _audioSource;
-        private Animator _animator;
-        private static readonly int Hurt = Animator.StringToHash("Hurt");
 
         private void Awake()
         {
@@ -28,8 +24,6 @@ namespace damage
             }
 
             _mortal = GetComponent<Mortal>();
-            _audioSource = GetComponent<AudioSource>();
-            _animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -37,15 +31,10 @@ namespace damage
             CheckHealth();
         }
 
-        public void ReceiveDamage(uint damage, AudioClip damageSound = null)
+        public void LowerBy(uint damage)
         {
-            _audioSource.PlayOneShot(damageSound ?? hurtSound);
             health = (damage >= health) ? 0 : health - damage;
             CheckHealth();
-            if (_animator != null)
-            {
-                _animator.SetTrigger(Hurt);
-            }
         }
 
         private void CheckHealth()
