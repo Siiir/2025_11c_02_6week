@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6161722561441817915}
   - component: {fileID: 3258186496381446670}
   - component: {fileID: 6574030517785433485}
+  - component: {fileID: 6745531772181621283}
+  - component: {fileID: 5873033518313310985}
   m_Layer: 0
   m_Name: AutoDispenser
   m_TagString: Untagged
@@ -202,6 +204,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6745531772181621283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893057838862992845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323e54cb945941a98e21d0bf15c26cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::death_effects.TerminatesInVoid
+--- !u!114 &5873033518313310985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893057838862992845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d179aa1d730452c98c08411ca69170a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::death_effects.TerminatesInsteadOfDying
 --- !u!1 &6238168974609448442
 GameObject:
   m_ObjectHideFlags: 0
