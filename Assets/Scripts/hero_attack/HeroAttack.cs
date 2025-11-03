@@ -1,6 +1,7 @@
 using Player;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 [RequireComponent(typeof(BasicPlayerMovement))]
 public class HeroAttack : MonoBehaviour
 {
