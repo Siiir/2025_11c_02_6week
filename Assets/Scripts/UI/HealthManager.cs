@@ -1,16 +1,18 @@
-using UnityEngine;
 using damage;
+using UnityEngine;
+using damage.hurting;
+using UnityEngine.Serialization;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Hurtable hurtable;
+    [FormerlySerializedAs("hp")] [SerializeField] private HitPoints heroHp;
     [SerializeField] private RectTransform fillPanel;
 
     private float maxWidth;
 
     private void Start()
     {
-        if (hurtable == null || fillPanel == null)
+        if (heroHp == null || fillPanel == null)
         {
             Debug.LogError("Missing references on HealthBar!");
             return;
@@ -22,13 +24,13 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        if (hurtable == null) return;
+        if (heroHp == null) return;
         UpdateBar();
     }
 
     private void UpdateBar()
     {
-        float healthPercent = (float)hurtable.Health / hurtable.FullHealth;
+        float healthPercent = (float)heroHp.Health / heroHp.FullHealth;
         Vector2 size = fillPanel.sizeDelta;
         size.x = maxWidth * healthPercent;
         fillPanel.sizeDelta = size;

@@ -243,11 +243,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5741675241785261627, guid: 40e615fad1b7d964ba37d9d5ad098d4b, type: 3}
   m_PrefabInstance: {fileID: 1755336260}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &852236930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9158522073812093743, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
-  m_PrefabInstance: {fileID: 1936479429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &870277267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,7 +302,7 @@ PrefabInstance:
     - target: {fileID: 4855143833826523880, guid: 8095901c2d0bd9e4498e488811fd6090, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 1688616522}
+      objectReference: {fileID: 1361161727}
     - target: {fileID: 4997141973882832099, guid: 8095901c2d0bd9e4498e488811fd6090, type: 3}
       propertyPath: orthographic size
       value: 6
@@ -529,11 +524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5977511
+      value: -4.115
       objectReference: {fileID: 0}
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.446805
+      value: 5.186
       objectReference: {fileID: 0}
     - target: {fileID: 7448051757005927699, guid: 4927062b093c0964fa4a59cbd02babb9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3714,42 +3709,47 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9ed0ca953e2f64e8ab2330ff1045ec, type: 3}
---- !u!224 &1498721739 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6366116011190323171, guid: c6fe84054d1759d42a23f1d1f785c24c, type: 3}
-  m_PrefabInstance: {fileID: 6071594254853880024}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1688616522 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6095702219143390893, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+--- !u!1 &1361161707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4022675681543943867, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
   m_PrefabInstance: {fileID: 1936479429}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1688616524 stripped
+--- !u!114 &1361161711 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8749336615760339548, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3816682940470950267, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
   m_PrefabInstance: {fileID: 1936479429}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852236930}
+  m_GameObject: {fileID: 1361161707}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38280ade80f84cc088ad7337f18b4b14, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::damage.Hurtable
---- !u!114 &1688616538
+  m_EditorClassIdentifier: Assembly-CSharp::damage.hurting.DirectlyHurtable
+--- !u!4 &1361161727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2040897722235067193, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+  m_PrefabInstance: {fileID: 1936479429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1361161728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852236930}
+  m_GameObject: {fileID: 1361161707}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cbb8fb935fa402492cf4d64d78f0c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::effects.PersistentPoison
-  damagePerTick: 1
+  damagePerTick: 2
   tickInterval: 2.5
   poisoningSound: {fileID: 8300000, guid: f29b9fe44a1f4414f899cb706bdd51e7, type: 3}
+--- !u!224 &1498721739 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6366116011190323171, guid: c6fe84054d1759d42a23f1d1f785c24c, type: 3}
+  m_PrefabInstance: {fileID: 6071594254853880024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1755336260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3973,6 +3973,14 @@ PrefabInstance:
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 8300000, guid: 21874873616f9fc429e2fe6f743e0e8a, type: 3}
+    - target: {fileID: 2040897722235067193, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040897722235067193, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4372269864454123546, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
       propertyPath: respawnTransform
       value: 
@@ -4021,6 +4029,10 @@ PrefabInstance:
       propertyPath: fullHealth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9101181393265871781, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+      propertyPath: fullHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9158522073812093743, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -4029,9 +4041,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9158522073812093743, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4022675681543943867, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1688616538}
+      addedObject: {fileID: 1361161728}
   m_SourcePrefab: {fileID: 100100000, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
 --- !u!1001 &6071594254853880024
 PrefabInstance:
@@ -4140,7 +4152,7 @@ PrefabInstance:
     - target: {fileID: 7244216586443730935, guid: c6fe84054d1759d42a23f1d1f785c24c, type: 3}
       propertyPath: hurtable
       value: 
-      objectReference: {fileID: 1688616524}
+      objectReference: {fileID: 1361161711}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
