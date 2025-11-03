@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
             Debug.LogError("Missing references on HealthBar!");
             return;
         }
-        
+
         maxWidth = fillPanel.sizeDelta.x;
         UpdateBar();
     }

@@ -60,8 +60,8 @@ namespace damage
         {
             this.health = fullHealth;
         }
-        
-        public uint Health => health;           // read-only public getter
-        public uint FullHealth => fullHealth;   // read-only public getter
+
+        public uint Health => health; // read-only public getter
+        public uint FullHealth => fullHealth; // read-only public getter
     }
 }
