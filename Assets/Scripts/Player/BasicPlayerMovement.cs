@@ -2,9 +2,11 @@ using damage;
 using death_effects.interfaces;
 using death_processors;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player
 {
+    
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource), typeof(AgonyfulMortal))]
     public class BasicPlayerMovement : MonoBehaviour, IDamagableComponent, IPostDeath
@@ -19,9 +21,11 @@ namespace Player
         private bool _performJump;
         private bool _isGrounded;
         [SerializeField] private float jumpForce = 5;
-        [SerializeField] private AudioClip jumpSound;
+        [SerializeField] private AudioClip jumpSound1;
+        [SerializeField] private AudioClip jumpSound2;
+        [SerializeField] private AudioClip jumpSound3;
 
-        [SerializeField] private int maxJumps = 2;
+        [FormerlySerializedAs("maxJumps")] [SerializeField] private int doubleJumps = 2;
         [SerializeField] private int jumpsRemaining;
 
         [SerializeField] private float coyoteTime = 0.4f;
@@ -44,7 +48,7 @@ namespace Player
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
 
-            jumpsRemaining = maxJumps;
+            jumpsRemaining = doubleJumps;
         }
 
         private void Update()
@@ -71,9 +75,8 @@ namespace Player
                 if (_isGrounded || _coyoteTimeCounter > 0f)
                 {
                     _performJump = true;
-                    jumpsRemaining--;
                 }
-                else if (jumpsRemaining == 1)
+                else if (jumpsRemaining > 0)
                 {
                     _performJump = true;
                     jumpsRemaining--;
@@ -81,7 +84,9 @@ namespace Player
 
                 if (_performJump)
                 {
-                    _audioSource.PlayOneShot(jumpSound);
+                    var clip = GetWeightedJumpSound();
+                    if (clip != null)
+                        _audioSource.PlayOneShot(clip,0.5f);
                 }
             }
 
@@ -145,7 +150,7 @@ namespace Player
                     if (contact.normal.y > surfaceNormal)
                     {
                         _isGrounded = true;
-                        jumpsRemaining = maxJumps;
+                        jumpsRemaining = doubleJumps;
                         return;
                     }
                 }
@@ -192,5 +197,24 @@ namespace Player
         {
             this.enabled = true;
         }
+        
+        private AudioClip GetWeightedJumpSound()
+        {
+            float weight1 = 0.5f;
+            float weight2 = 0.495f;
+            // last ones weight is 1-(w1+w2)
+            
+            float rand = Random.value;
+            if (rand < weight1)
+                return jumpSound1;
+            else if (rand < weight1 + weight2)
+                return jumpSound2;
+            else
+                return jumpSound3;
+        }
+
     }
+    
+    
+    
 }
