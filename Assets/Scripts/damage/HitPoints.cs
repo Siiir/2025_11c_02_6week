@@ -49,5 +49,8 @@ namespace damage
         {
             this.health = fullHealth;
         }
+
+        public uint Health => health; // public getter
+        public uint FullHealth => fullHealth; // public getter
     }
 }
