@@ -17,6 +17,8 @@ namespace obstacles
         // Stats
         [SerializeField] private uint damageOnHit = 10;
 
+        private bool _hasCollided;
+
         // Components
         private Mortal _mortal;
         private Collider2D _collider;
@@ -34,6 +36,9 @@ namespace obstacles
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (_hasCollided) return;
+            _hasCollided = true;
+            
             var hurtable = other.gameObject.GetComponent<DirectlyHurtable>();
             if (hurtable != null)
             {
