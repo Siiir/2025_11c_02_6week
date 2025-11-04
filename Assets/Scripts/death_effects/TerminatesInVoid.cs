@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace death_effects
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(Terminable))]
     public class TerminatesInVoid : MonoBehaviour
     {

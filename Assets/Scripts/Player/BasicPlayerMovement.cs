@@ -1,9 +1,13 @@
+using damage;
+using death_effects.interfaces;
+using death_processors;
 using UnityEngine;
 
 namespace Player
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource))]
-    public class BasicPlayerMovement : MonoBehaviour
+    [DisallowMultipleComponent]
+    [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource), typeof(AgonyfulMortal))]
+    public class BasicPlayerMovement : MonoBehaviour, IDamagableComponent, IPostDeath
     {
         [SerializeField] private string groundTag = "Ground";
 
@@ -72,12 +76,15 @@ namespace Player
                 {
                     _performJump = true;
                     jumpsRemaining--;
-                    _audioSource.PlayOneShot(jumpSound);
                 }
                 else if (jumpsRemaining == 1)
                 {
                     _performJump = true;
                     jumpsRemaining--;
+                }
+
+                if (_performJump)
+                {
                     _audioSource.PlayOneShot(jumpSound);
                 }
             }
@@ -173,6 +180,21 @@ namespace Player
             {
                 _isGrounded = false;
             }
+        }
+
+        public void DoPostDeath()
+        {
+            // Player should not be able to control character after death
+            //
+            // This is a bad fix because class does not adhere to SRP principle.
+            // https://en.wikipedia.org/wiki/SOLID
+            // However, I will not fix the class. It might be fine anyway.
+            this.enabled = false;
+        }
+
+        public void RestoreDamage()
+        {
+            this.enabled = true;
         }
     }
 }

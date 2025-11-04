@@ -1,4 +1,5 @@
 using damage;
+using damage.hurting;
 using death_effects;
 using death_processors;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace obstacles
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var hurtable = other.gameObject.GetComponent<Hurtable>();
+            var hurtable = other.gameObject.GetComponent<DirectlyHurtable>();
             if (hurtable != null)
             {
                 hurtable.ReceiveDamage(damageOnHit);

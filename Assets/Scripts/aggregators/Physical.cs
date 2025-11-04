@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace aggregators
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class Physical : MonoBehaviour, IDamagableComponent
     {
