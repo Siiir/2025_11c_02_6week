@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SilverCoin
   m_EditorClassIdentifier: Assembly-CSharp::CollectableCoinSO
   value: 1
-  audioClip: {fileID: 8300000, guid: 1b9b1161b095ac54483b9e50908d2380, type: 3}
+  audioClip: {fileID: 8300000, guid: 06424dfb2fd740b44a269f72221064bc, type: 3}
