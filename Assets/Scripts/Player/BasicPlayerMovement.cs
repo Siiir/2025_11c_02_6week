@@ -25,7 +25,7 @@ namespace Player
         [SerializeField] private AudioClip jumpSound2;
         [SerializeField] private AudioClip jumpSound3;
 
-        [FormerlySerializedAs("maxJumps")] [SerializeField] private int doubleJumps = 2;
+        [FormerlySerializedAs("maxJumps")] [SerializeField] private int doubleJumps = 1;
         [SerializeField] private int jumpsRemaining;
 
         [SerializeField] private float coyoteTime = 0.4f;
@@ -66,7 +66,7 @@ namespace Player
                 _coyoteTimeCounter = coyoteTime;
                 if (_rb.linearVelocity.y <= 0)
                 {
-                    jumpsRemaining = maxJumps;
+                    jumpsRemaining = doubleJumps;
                 }
             }
             else
