@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace damage
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(AgonyfulMortal))]
     public class Aging : MonoBehaviour, IDamagableComponent, IPostDeath
     {
@@ -32,7 +33,7 @@ namespace damage
         {
             this.enabled = false;
         }
-        
+
         public void RestoreDamage()
         {
             currentAgeInSecs = 0.0f;

@@ -2,7 +2,8 @@
 
 namespace aggregators
 {
-    [RequireComponent(typeof(HeroMovement), typeof(HeroLifeCycle))]
+    [DisallowMultipleComponent]
+    [RequireComponent(typeof(HeroLifeCycle), typeof(HeroMovement), typeof(HeroAttack))]
     public class Hero : MonoBehaviour
     {
     }

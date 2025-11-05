@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using death_effects;
+using death_effects.respawning;
 using UnityEngine;
 
 namespace interactibles
