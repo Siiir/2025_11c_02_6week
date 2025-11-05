@@ -61,9 +61,13 @@ namespace Player
             if (_spriteRenderer != null)
                 _spriteRenderer.flipX = !FacingRight;
 
-            if (_isGrounded)
+            if (_isGrounded) 
             {
                 _coyoteTimeCounter = coyoteTime;
+                if (_rb.linearVelocity.y <= 0)
+                {
+                    jumpsRemaining = maxJumps;
+                }
             }
             else
             {
