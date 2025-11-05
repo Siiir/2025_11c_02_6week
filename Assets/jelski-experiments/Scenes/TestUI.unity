@@ -7965,6 +7965,18 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1204285789581749059, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+      propertyPath: jumpSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: eba165cc4f5deca4babefd4b79167d70, type: 3}
+    - target: {fileID: 1204285789581749059, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+      propertyPath: jumpSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: e3f4bf1447d00284280b9ac69f89e31a, type: 3}
+    - target: {fileID: 1204285789581749059, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+      propertyPath: jumpSound3
+      value: 
+      objectReference: {fileID: 8300000, guid: 306a73cf0c2fda247b95883a19b708dc, type: 3}
+    - target: {fileID: 1204285789581749059, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
       propertyPath: doubleJumps
       value: 1
       objectReference: {fileID: 0}
@@ -8055,7 +8067,7 @@ PrefabInstance:
     - target: {fileID: 6942777110026961088, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
       propertyPath: deathSound
       value: 
-      objectReference: {fileID: 8300000, guid: 21874873616f9fc429e2fe6f743e0e8a, type: 3}
+      objectReference: {fileID: 8300000, guid: 6fe44522cfebb984ab43675a6feba6fa, type: 3}
     - target: {fileID: 8749336615760339548, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
       propertyPath: fullHealth
       value: 5
