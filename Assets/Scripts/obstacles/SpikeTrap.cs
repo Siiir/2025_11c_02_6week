@@ -1,12 +1,13 @@
 using damage;
+using damage.hurting;
 using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 10f;
-    private uint damageAmount = 1;
+    [SerializeField] private uint damageAmount = 10;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("SpikeTrap");
         if (other.gameObject.CompareTag("Player"))
