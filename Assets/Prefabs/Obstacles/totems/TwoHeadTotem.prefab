@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8946287110318055451}
   - component: {fileID: 6227172791354220606}
   - component: {fileID: 7424129251149140987}
-  - component: {fileID: 6302300599497883166}
   - component: {fileID: 6412509598558902224}
   - component: {fileID: 2439204975157148587}
   m_Layer: 0
@@ -189,28 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323e54cb945941a98e21d0bf15c26cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::death_effects.TerminatesInVoid
---- !u!95 &6302300599497883166
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786688223941711329}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 145b2c1c32f7c964eabc6fa3c30e9c9b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6412509598558902224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f546d2a21633442833f1837fff5963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TotemDeathAnimationHandler
-  animator: {fileID: 6302300599497883166}
   timeBeforeDestruction: 0.1
   totemShattered: {fileID: 1242401469764303506, guid: cdd94d44303d76146babf01de7c1803b, type: 3}
 --- !u!114 &2439204975157148587

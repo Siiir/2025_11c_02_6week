@@ -5,9 +5,7 @@ using death_effects;
 [RequireComponent(typeof(Terminable))]
 public class TotemDeathAnimationHandler : MonoBehaviour
 {
-    private static readonly int Die = Animator.StringToHash("Die");
-    [SerializeField] private Animator animator;
-    [SerializeField] private float timeBeforeDestruction = 0.5f;
+    [SerializeField] private float timeBeforeDestruction = 0.1f;
     [SerializeField] private GameObject totemShattered;
 
     private Terminable _terminable;
@@ -20,11 +18,6 @@ public class TotemDeathAnimationHandler : MonoBehaviour
 
     public void PlayDeathAnimation()
     {
-        if (animator)
-        {
-            animator.SetTrigger(Die);
-        }
-
         if (!_hasCollided)
         {
             Instantiate(totemShattered, transform.position, transform.rotation);
