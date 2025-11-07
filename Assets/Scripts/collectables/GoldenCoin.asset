@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GoldenCoin
   m_EditorClassIdentifier: Assembly-CSharp::CollectableCoinSO
   value: 5
-  audioClip: {fileID: 8300000, guid: 41c2daf1d5c82984890b48d6489775da, type: 3}
+  audioClip: {fileID: 8300000, guid: beae22cb4cca7f04f9daeb1ae7ba5d48, type: 3}
