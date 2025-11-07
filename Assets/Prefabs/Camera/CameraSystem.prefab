@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6610564399015938546}
   - component: {fileID: 4855143833826523880}
   - component: {fileID: 7831618050802762913}
+  - component: {fileID: 4944434231250200792}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -91,7 +92,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 18.294481
+    OrthographicSize: 8.17
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineThirdPersonFollow
-  Damping: {x: 0.1, y: 0.5, z: 0.3}
+  Damping: {x: 0.5, y: 0.55, z: 1}
   ShoulderOffset: {x: 0.5, y: -0.4, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1
@@ -135,6 +136,26 @@ MonoBehaviour:
     CameraRadius: 0.2
     DampingIntoCollision: 0
     DampingFromCollision: 0.5
+--- !u!114 &4944434231250200792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7438428401913889497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineConfiner2D
+  BoundingShape2D: {fileID: 0}
+  Damping: 0.5
+  SlowingDistance: 5
+  OversizeWindow:
+    Enabled: 0
+    MaxWindowSize: 0
+    Padding: 0
+  m_LegacyMaxWindowSize: -2
 --- !u!1 &7864929432093385818
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18.294481
+  orthographic size: 8.17
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

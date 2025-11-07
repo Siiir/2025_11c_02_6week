@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 6718679627193760224}
   - component: {fileID: 7350643700786051226}
   - component: {fileID: 3350785176863087572}
+  - component: {fileID: 7540324953499010979}
+  - component: {fileID: 8403351211773492295}
+  - component: {fileID: 6022383084174352480}
   m_Layer: 0
   m_Name: TwoHandTotem
   m_TagString: Untagged
@@ -174,6 +177,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::damage.HitPoints
   fullHealth: 40
   health: 0
+--- !u!114 &7540324953499010979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681848632018270191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323e54cb945941a98e21d0bf15c26cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::death_effects.TerminatesInVoid
+--- !u!114 &8403351211773492295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681848632018270191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d179aa1d730452c98c08411ca69170a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::death_effects.TerminatesInsteadOfDying
+--- !u!114 &6022383084174352480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681848632018270191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15132c812eb84d17b86fc1e7165afb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::aggregators.Totem
 --- !u!1001 &759426845406896812
 PrefabInstance:
   m_ObjectHideFlags: 0
