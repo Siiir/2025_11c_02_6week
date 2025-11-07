@@ -1,10 +1,12 @@
-﻿using death_processors;
+﻿using death_effects.interfaces;
+using death_processors;
 using UnityEngine;
 
 namespace damage
 {
-    [RequireComponent(typeof(Mortal))]
-    public class Aging : MonoBehaviour, IDamagableComponent
+    [DisallowMultipleComponent]
+    [RequireComponent(typeof(AgonyfulMortal))]
+    public class Aging : MonoBehaviour, IDamagableComponent, IPostDeath
     {
         [SerializeField] private float maxAgeInSecs = 6.0f;
 
@@ -27,9 +29,15 @@ namespace damage
             }
         }
 
+        public void DoPostDeath()
+        {
+            this.enabled = false;
+        }
+
         public void RestoreDamage()
         {
             currentAgeInSecs = 0.0f;
+            this.enabled = true;
         }
     }
 }
