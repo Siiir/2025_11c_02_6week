@@ -30,8 +30,9 @@ python3 -m venv ./venv/
 ./venv/bin/pre-commit install --hook-type commit-msg
 ```
 
-## Contributing
+## Contribution
 
+### How to contribute?
 1. Clone the repository  
 1.1 git clone  
 1.2 Install the hooks  
@@ -39,3 +40,13 @@ python3 -m venv ./venv/
 3. Make your changes
 4. Ensure all pre-commit hooks pass
 5. Submit a pull request
+
+### Developer credits
+[In separate file.](./CREDITS.md)
+
+### University credits
+Completion of a 6-week project within:  
+the specialized area **eXtended Reality, Games and Immersive Systems**  
+in the department of **eXtended Reality and Immersive Systems**  
+at the **Polish-Japanese Academy of Information Technology.**
+

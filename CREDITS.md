@@ -1,8 +1,10 @@
 # Credits
 
 ## Vanessa Bienias
+...
 
 ## Filip Jelski
+...
 
 ## Tomasz Nehring  
 ### Scripts  
