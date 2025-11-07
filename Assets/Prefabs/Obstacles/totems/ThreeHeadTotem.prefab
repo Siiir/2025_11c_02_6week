@@ -214,7 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f546d2a21633442833f1837fff5963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  animator: {fileID: 0}
   timeBeforeDestruction: 0.1
   totemShattered: {fileID: 4505262926321414753, guid: c789e1fc692af804ab0dd1c3cd7072a9, type: 3}
 --- !u!114 &1520531355766185181
@@ -247,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.x
-      value: 0.75136185
+      value: 0.626709
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.y
@@ -255,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.x
-      value: -0.09447098
+      value: -0.09680176
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.y
@@ -496,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.x
-      value: 0.73865604
+      value: 0.6272812
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.y
@@ -504,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.x
-      value: 0.009616375
+      value: 0.0056381226
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.y
@@ -733,19 +732,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.x
-      value: 0.73937464
+      value: 0.62787247
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.y
-      value: 0.9082259
+      value: 0.846022
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.x
-      value: 0.11799359
+      value: 0.12496376
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0062369704
+      value: -0.037338912
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

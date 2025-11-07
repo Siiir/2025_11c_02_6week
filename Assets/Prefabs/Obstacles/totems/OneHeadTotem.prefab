@@ -199,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f546d2a21633442833f1837fff5963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TotemDeathAnimationHandler
-  animator: {fileID: 0}
   timeBeforeDestruction: 0.1
   totemShattered: {fileID: 355351898212660558, guid: 6f6567dae41f3cb43b5a43cb1dcac96b, type: 3}
 --- !u!114 &8757623823332433672
@@ -232,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.x
-      value: 0.66960144
+      value: 0.6272812
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Size.y
@@ -240,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.x
-      value: 0.015623093
+      value: 0.005638123
       objectReference: {fileID: 0}
     - target: {fileID: 2757072830173323046, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Offset.y

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7377384583456680617}
   - component: {fileID: 2103972810009785634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ThreeHeadTotemShattered 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,6 +56,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7377384583456680617}
     m_Modifications:
+    - target: {fileID: 2082595339941012095, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3023839969444500809, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.08652039
@@ -96,9 +100,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3784188716791260912, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5153058346530604284, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
       propertyPath: m_Name
       value: Head3Shattered
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153058346530604284, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715063716969877441, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352994548370708699, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3567163589869548358, guid: 63108a421aad8084b86d88c4b718bee9, type: 3}
@@ -119,9 +139,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7377384583456680617}
     m_Modifications:
+    - target: {fileID: 811085765019629321, guid: 366f297d79dad014385396568e7d2910, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2607914327241051779, guid: 366f297d79dad014385396568e7d2910, type: 3}
       propertyPath: m_Name
       value: Head1Shattered
+      objectReference: {fileID: 0}
+    - target: {fileID: 2607914327241051779, guid: 366f297d79dad014385396568e7d2910, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454781608268798173, guid: 366f297d79dad014385396568e7d2910, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4605876431556177284, guid: 366f297d79dad014385396568e7d2910, type: 3}
       propertyPath: m_LocalPosition.x
@@ -163,6 +195,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7335997508659226909, guid: 366f297d79dad014385396568e7d2910, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380290185777888212, guid: 366f297d79dad014385396568e7d2910, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8362192680110406746, guid: 366f297d79dad014385396568e7d2910, type: 3}
     m_RemovedGameObjects: []
@@ -182,6 +222,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7377384583456680617}
     m_Modifications:
+    - target: {fileID: 2217013914309602446, guid: c4686cc2d3c0c6940878da43921bdb54, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554102347175501417, guid: c4686cc2d3c0c6940878da43921bdb54, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2601357882781052576, guid: c4686cc2d3c0c6940878da43921bdb54, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.121520355
@@ -222,9 +270,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5983936652961754438, guid: c4686cc2d3c0c6940878da43921bdb54, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6896324958360345808, guid: c4686cc2d3c0c6940878da43921bdb54, type: 3}
       propertyPath: m_Name
       value: Head2Shattered
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896324958360345808, guid: c4686cc2d3c0c6940878da43921bdb54, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2004376597176771217, guid: c4686cc2d3c0c6940878da43921bdb54, type: 3}

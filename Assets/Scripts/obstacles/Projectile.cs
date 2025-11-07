@@ -50,7 +50,11 @@ namespace obstacles
                 _animator.SetTrigger(Die);
             }
             
-            Instantiate(projectileHit, transform.position, transform.rotation);
+            
+            Vector3 currentDirection = GetComponent<Rigidbody2D>().linearVelocity.normalized;
+            Vector2 spawnPosition = transform.position - currentDirection * 0.1f;
+            
+            Instantiate(projectileHit, spawnPosition, transform.rotation);
             
             this._mortal.Die();
         }
