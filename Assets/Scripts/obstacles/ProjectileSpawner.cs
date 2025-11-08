@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace obstacles
@@ -7,6 +8,9 @@ namespace obstacles
     {
         // References
         [SerializeField] private GameObject projectilePrefab;
+        [SerializeField] private Animator bodyAnimator;
+        private static readonly int Attack = Animator.StringToHash("Attack");
+
 
         [SerializeField] private AudioClip shotSound;
 
@@ -48,13 +52,18 @@ namespace obstacles
             dispenseCooldown -= Time.deltaTime;
             if (dispenseCooldown <= 0)
             {
-                DispenseProjectile();
+                StartCoroutine(DispenseProjectileWithDelay());
                 ResetDispenseCooldown();
             }
         }
 
-        private void DispenseProjectile()
+        private IEnumerator DispenseProjectileWithDelay()
         {
+            if (bodyAnimator)
+                bodyAnimator.SetTrigger(Attack);
+            
+            yield return new WaitForSeconds(0.3f);
+            
             _audioSource.PlayOneShot(shotSound);
             var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
             // Apply initial force/velocity

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7350643700786051226}
   - component: {fileID: 3350785176863087572}
   - component: {fileID: 7540324953499010979}
-  - component: {fileID: 8403351211773492295}
-  - component: {fileID: 6022383084174352480}
+  - component: {fileID: 412306074089544013}
+  - component: {fileID: -3414482845674671410}
   m_Layer: 0
   m_Name: TwoHandTotem
   m_TagString: Untagged
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323e54cb945941a98e21d0bf15c26cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::death_effects.TerminatesInVoid
---- !u!114 &8403351211773492295
+--- !u!114 &412306074089544013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d179aa1d730452c98c08411ca69170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::death_effects.TerminatesInsteadOfDying
---- !u!114 &6022383084174352480
+--- !u!114 &-3414482845674671410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
