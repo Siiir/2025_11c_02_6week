@@ -14,7 +14,7 @@
 * Totems & projectile logic  
 
 #### Wiring components  
-* Agregator-like MonoBehaviours  
+* Aggregator-like MonoBehaviours  
 * Most of the sound logic  
 
 ### Content  
