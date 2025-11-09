@@ -18,7 +18,7 @@
 * Most of the sound logic  
 
 ### Content  
-* Almost all sounds (non-com. licences or homemade)  
+* Almost all sounds (non-com. licenses or homemade)  
 
 ### Teamwork  
 #### Merging  
