@@ -9,12 +9,13 @@
 Will be available on GitHub Pages once teacher will allow to publish repo and make such browser release.
 
 ### Self-hosted
+1. Download repo and host ./docs subfolder
 ```shell
 git clone git@github.com:Siiir/2025_11c_02_6week.git
 cd 2025_11c_02_6week/docs
-python -m http.server
+python -m http.server 8000
 ```
-Go to http://localhost:8000 in your browser.
+2. Go to http://localhost:8000 in your browser.
 
 ### On desktop
 Download release for your device. This is found in GitHub releases subpage of the repo.
