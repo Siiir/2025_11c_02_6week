@@ -114,7 +114,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
+#build/
 develop-eggs/
 dist/
 downloads/
@@ -152,6 +152,9 @@ Thumbs.db
 
 # Warp
 /WARP.md
+
+# Non-obvious artifact dirs
 /Assets/_Recovery
+/build/*
 
 Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Electronic Highway Sign SDF.asset
