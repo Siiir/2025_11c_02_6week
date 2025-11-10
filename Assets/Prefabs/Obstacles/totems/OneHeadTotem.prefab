@@ -225,6 +225,14 @@ PrefabInstance:
       propertyPath: bodyAnimator
       value: 
       objectReference: {fileID: 1098184131158729329}
+    - target: {fileID: 804918783484833135, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
+      propertyPath: maxDispenseInterval
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 804918783484833135, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
+      propertyPath: minDispenseInterval
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 893057838862992845, guid: 90cc64df8e8e7b4468e1f89ea25e3cd9, type: 3}
       propertyPath: m_Name
       value: RhsAutoDispenserHead2
