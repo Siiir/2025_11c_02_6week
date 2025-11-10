@@ -1,7 +1,13 @@
 # Credits
 
 ## Vanessa Bienias
-...
+* Graphics
+* Level design
+* Bug fixes
+* Testing and prototyping
+* Work on core gameplay scripts
+* Character design
+* Enemy design
 
 ## Filip Jelski
 ...
