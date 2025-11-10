@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34e7a2a3bc123d4b8d726a455d69e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::death_effects.DestroyAfterTime
-  lifeTimeLeft: 0.6
+  lifeTimeLeft: 1
 --- !u!50 &6459358112107761393
 Rigidbody2D:
   serializedVersion: 5

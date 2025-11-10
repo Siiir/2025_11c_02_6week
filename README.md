@@ -1,7 +1,9 @@
 # Chopirate game - 6week PJATK project
 
+![Game Overview](./readme/GameOverview.png)
+![Narrative and Objective](./readme/GameNarrativeAndObjective.png)
 
-## Run game
+## Run the game
 
 ### In the browser
 
