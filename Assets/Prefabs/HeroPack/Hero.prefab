@@ -487,8 +487,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HeroAttack
   attackArea: {fileID: 7143152847137685673}
   attackDamage: 10
-  attackCooldown: 0.5
-  attackDuration: 0.3
+  attackCooldown: 0.2
+  attackDuration: 0.2
   offsetX: 0.6
   offsetY: -0.1
 --- !u!1 &7143152847137685673
