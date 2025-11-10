@@ -18,11 +18,12 @@
 * Most of the sound logic  
 
 ### Content  
-* Almost all sounds (non-com. licenses or homemade)  
+* Most of sounds in dev. process (non-com. licenses or homemade)  
+**Disclaimer:** Many unfortunately have been replaced/removed at the end to increase coherence.
 
 ### Teamwork  
 #### Merging  
-* common levels (prototypes) – all merge Teams assignments  
+* common level prototyping – all merge Teams assignments  
 * most of the feedback and PR reviews  
 
 #### Repository administration  
