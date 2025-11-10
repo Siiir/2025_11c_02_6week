@@ -7,11 +7,20 @@ namespace interactibles
     [RequireComponent(typeof(Collider2D), typeof(AudioSource))]
     public class CheckPoint : MonoBehaviour
     {
-        [SerializeField] AudioClip checkPointSetSound;
-        [SerializeField] AudioClip checkCannotBeSetSound;
+        // Stats & Tweaks
+        [SerializeField] private bool playCpCannotBeSetSound;
+
+        // Serialized Fields
+        [SerializeField] private AudioClip checkPointSetSound;
+
+        [SerializeField] private AudioClip cpCannotBeSetSound;
+
+        // Components
         private Collider2D _collider2D;
+
         private AudioSource _audioSource;
 
+        // Other Fields
         private readonly HashSet<GameObject> _suppressNextCheckIn = new HashSet<GameObject>();
 
         private void Awake()
@@ -53,13 +62,18 @@ namespace interactibles
                 return;
             }
 
-            if (respawnable.respawnTransform == transform)
+            // If the checkpoint is already set here
+            if (respawnable.respawnTransform == this.transform)
             {
-                // Checkpoint is already set here
-                _audioSource.PlayOneShot(checkCannotBeSetSound);
+                if (playCpCannotBeSetSound)
+                {
+                    _audioSource.PlayOneShot(cpCannotBeSetSound);
+                }
+
                 return;
             }
 
+            // Set the checkpoint
             _audioSource.PlayOneShot(checkPointSetSound);
             respawnable.respawnTransform = transform;
         }

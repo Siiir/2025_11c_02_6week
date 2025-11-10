@@ -1,6 +1,5 @@
-using UnityEngine;
 using death_processors;
-using death_effects;
+using UnityEngine;
 
 [RequireComponent(typeof(Terminable))]
 public class TotemDeathAnimationHandler : MonoBehaviour
@@ -10,7 +9,7 @@ public class TotemDeathAnimationHandler : MonoBehaviour
 
     private Terminable _terminable;
     private bool _hasCollided;
-    
+
     private void Awake()
     {
         _terminable = GetComponent<Terminable>();

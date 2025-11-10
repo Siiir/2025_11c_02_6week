@@ -1,6 +1,4 @@
 using System.Collections;
-using aggregators;
-using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 namespace obstacles
@@ -53,13 +51,13 @@ namespace obstacles
         private void FixedUpdate()
         {
             dispenseCooldown -= Time.deltaTime;
-            
+
             if (dispenseCooldown <= 0)
             {
                 // dispense projectile when hero is near
                 float distance = Mathf.Sqrt(
-                    Mathf.Pow(heroTransform.position.x - this.GetComponent<Transform>().position.x,2)
-                    + Mathf.Pow(heroTransform.position.y - this.GetComponent<Transform>().position.y,2));
+                    Mathf.Pow(heroTransform.position.x - this.GetComponent<Transform>().position.x, 2)
+                    + Mathf.Pow(heroTransform.position.y - this.GetComponent<Transform>().position.y, 2));
                 if (distance < 30)
                 {
                     StartCoroutine(DispenseProjectileWithDelay());
@@ -72,9 +70,9 @@ namespace obstacles
         {
             if (bodyAnimator)
                 bodyAnimator.SetTrigger(Attack);
-            
+
             yield return new WaitForSeconds(0.3f);
-            
+
             _audioSource.PlayOneShot(shotSound);
             var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
             // Apply initial force/velocity

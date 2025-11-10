@@ -1,11 +1,12 @@
 using damage;
 using UnityEngine;
-using damage.hurting;
 using UnityEngine.Serialization;
 
 public class HealthBar : MonoBehaviour
 {
-    [FormerlySerializedAs("hp")] [SerializeField] private HitPoints heroHp;
+    [FormerlySerializedAs("hp")] [SerializeField]
+    private HitPoints heroHp;
+
     [SerializeField] private RectTransform fillPanel;
 
     private float maxWidth;
