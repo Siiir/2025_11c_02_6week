@@ -13,7 +13,7 @@ namespace obstacles
     public class Projectile : MonoBehaviour
     {
         private static readonly int Die = Animator.StringToHash("Die");
-        
+
         // Stats
         [SerializeField] private uint damageOnHit = 10;
 
@@ -38,7 +38,7 @@ namespace obstacles
         {
             if (_hasCollided) return;
             _hasCollided = true;
-            
+
             var hurtable = other.gameObject.GetComponent<DirectlyHurtable>();
             if (hurtable != null)
             {
@@ -49,13 +49,13 @@ namespace obstacles
             {
                 _animator.SetTrigger(Die);
             }
-            
-            
+
+
             Vector3 currentDirection = GetComponent<Rigidbody2D>().linearVelocity.normalized;
             Vector2 spawnPosition = transform.position - currentDirection * 0.1f;
-            
+
             Instantiate(projectileHit, spawnPosition, transform.rotation);
-            
+
             this._mortal.Die();
         }
     }
