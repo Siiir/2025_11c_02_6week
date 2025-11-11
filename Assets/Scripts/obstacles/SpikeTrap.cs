@@ -1,4 +1,3 @@
-using damage;
 using damage.hurting;
 using UnityEngine;
 
@@ -12,9 +11,9 @@ public class SpikeTrap : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             // make player bounce when stepping on spikes
-            
+
             Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
-            
+
             if (rb)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
@@ -22,9 +21,7 @@ public class SpikeTrap : MonoBehaviour
 
                 Hurtable hurtable = other.gameObject.GetComponent<Hurtable>();
                 hurtable.ReceiveDamage(damageAmount);
-                
             }
         }
     }
-
 }

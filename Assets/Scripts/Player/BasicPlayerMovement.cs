@@ -6,7 +6,6 @@ using UnityEngine.Serialization;
 
 namespace Player
 {
-    
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Rigidbody2D), typeof(AudioSource), typeof(AgonyfulMortal))]
     public class BasicPlayerMovement : MonoBehaviour, IDamagableComponent, IPostDeath
@@ -25,7 +24,9 @@ namespace Player
         [SerializeField] private AudioClip jumpSound2;
         [SerializeField] private AudioClip jumpSound3;
 
-        [FormerlySerializedAs("maxJumps")] [SerializeField] private int doubleJumps = 1;
+        [FormerlySerializedAs("maxJumps")] [SerializeField]
+        private int doubleJumps = 1;
+
         [SerializeField] private int jumpsRemaining;
 
         [SerializeField] private float coyoteTime = 0.4f;
@@ -61,7 +62,7 @@ namespace Player
             if (_spriteRenderer != null)
                 _spriteRenderer.flipX = !FacingRight;
 
-            if (_isGrounded) 
+            if (_isGrounded)
             {
                 _coyoteTimeCounter = coyoteTime;
                 if (_rb.linearVelocity.y <= 0)
@@ -90,7 +91,7 @@ namespace Player
                 {
                     var clip = GetWeightedJumpSound();
                     if (clip != null)
-                        _audioSource.PlayOneShot(clip,0.5f);
+                        _audioSource.PlayOneShot(clip, 0.5f);
                 }
             }
 
@@ -201,13 +202,13 @@ namespace Player
         {
             this.enabled = true;
         }
-        
+
         private AudioClip GetWeightedJumpSound()
         {
             float weight1 = 0.5f;
             float weight2 = 0.495f;
             // last ones weight is 1-(w1+w2)
-            
+
             float rand = Random.value;
             if (rand < weight1)
                 return jumpSound1;
@@ -216,9 +217,5 @@ namespace Player
             else
                 return jumpSound3;
         }
-
     }
-    
-    
-    
 }
