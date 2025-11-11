@@ -1,0 +1,12 @@
+\usepackage[a4paper, top=1.0in, bottom=1.0in, left=1.0in, right=1.0in]{geometry}
+
+% Enable footer with extra space
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Remove unwanted header rule
+\renewcommand{\headrulewidth}{0pt}
+
+% Ensure header remains empty
+\fancyhead{}
+
