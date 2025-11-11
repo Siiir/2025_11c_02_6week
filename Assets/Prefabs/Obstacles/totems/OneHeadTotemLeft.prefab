@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52ba3691233499d8fb8b89758bc8ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damage.HitPoints
-  fullHealth: 40
+  fullHealth: 10
   health: 0
 --- !u!114 &6050887384653340102
 MonoBehaviour:
