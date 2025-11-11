@@ -24,8 +24,7 @@ MonoBehaviour:
     m_path: Assets/Scenes/MainMenu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Level1Scene.unity
-  m_ScriptingDefines:
-  - 
+  m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
   references:
@@ -34,10 +33,10 @@ MonoBehaviour:
     - rid: 803047256467177536
       type: {class: WindowsPlatformSettings, ns: UnityEditor.WindowsStandalone, asm: UnityEditor.WindowsStandalone.Extensions}
       data:
-        m_Development: 0
+        m_Development: 1
         m_ConnectProfiler: 0
         m_BuildWithDeepProfilingSupport: 0
-        m_AllowDebugging: 0
+        m_AllowDebugging: 1
         m_WaitForManagedDebugger: 0
         m_ManagedDebuggerFixedPort: 0
         m_ExplicitNullChecks: 0
