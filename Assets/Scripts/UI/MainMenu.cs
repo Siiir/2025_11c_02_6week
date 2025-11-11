@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // MAKE SURE ITS WHATEVER NUMBER IS THE LEVEL 1 SCENE IN BUILD SETTINGS
-    private int _level1Scene = 1;
+    // MAKE SURE it's whatever number is the level1Scene in build settings
+    private readonly int _level1Scene = 1;
     public void PlayGame()
     {
         SceneManager.LoadScene(_level1Scene);
@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     
     public void ExitGame()
     {
-        Debug.Log("Exit button pressed!");
+        
         Application.Quit();
         
 #if UNITY_EDITOR
