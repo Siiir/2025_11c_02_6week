@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1204285789581749059, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
+      propertyPath: jumpForce
+      value: 15.9
+      objectReference: {fileID: 0}
     - target: {fileID: 2015209917108366432, guid: c14a7f4a795254d4fb0fb4ff4862255f, type: 3}
       propertyPath: attackDamage
       value: 40
@@ -4030,10 +4034,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 93584062974348131, guid: cc13ad55f03a7fd419e41a07f191d01c, type: 3}
+      propertyPath: heroTransform
+      value: 
+      objectReference: {fileID: 997723135}
+    - target: {fileID: 1482748993621000028, guid: cc13ad55f03a7fd419e41a07f191d01c, type: 3}
+      propertyPath: heroTransform
+      value: 
+      objectReference: {fileID: 997723135}
     - target: {fileID: 1723384209762499160, guid: cc13ad55f03a7fd419e41a07f191d01c, type: 3}
       propertyPath: m_Name
       value: ThreeHeadTotem
       objectReference: {fileID: 0}
+    - target: {fileID: 2621137341339430054, guid: cc13ad55f03a7fd419e41a07f191d01c, type: 3}
+      propertyPath: heroTransform
+      value: 
+      objectReference: {fileID: 997723135}
     - target: {fileID: 3536114396102269944, guid: cc13ad55f03a7fd419e41a07f191d01c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.56
@@ -4091,6 +4107,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoHeadTotem
       objectReference: {fileID: 0}
+    - target: {fileID: 5946437570515145551, guid: 0702ede73e6aa9a4c95fa7b1f6bcfd8f, type: 3}
+      propertyPath: heroTransform
+      value: 
+      objectReference: {fileID: 997723135}
+    - target: {fileID: 8064328375582961172, guid: 0702ede73e6aa9a4c95fa7b1f6bcfd8f, type: 3}
+      propertyPath: heroTransform
+      value: 
+      objectReference: {fileID: 997723135}
     - target: {fileID: 9085017083286999554, guid: 0702ede73e6aa9a4c95fa7b1f6bcfd8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.68
@@ -4257,7 +4281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4855143833826523880, guid: 8095901c2d0bd9e4498e488811fd6090, type: 3}
       propertyPath: Lens.OrthographicSize
-      value: 10.8
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 4855143833826523880, guid: 8095901c2d0bd9e4498e488811fd6090, type: 3}
       propertyPath: Target.TrackingTarget
@@ -4265,7 +4289,7 @@ PrefabInstance:
       objectReference: {fileID: 997723135}
     - target: {fileID: 4997141973882832099, guid: 8095901c2d0bd9e4498e488811fd6090, type: 3}
       propertyPath: orthographic size
-      value: 10.8
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 6610564399015938546, guid: 8095901c2d0bd9e4498e488811fd6090, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4300,6 +4324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneHeadTotem
       objectReference: {fileID: 0}
+    - target: {fileID: 3684428216359903161, guid: 8fcaa70def9cfdf47a9fc9ad9dbfd1da, type: 3}
+      propertyPath: heroTransform
+      value: 
+      objectReference: {fileID: 997723135}
     - target: {fileID: 6119424735745184349, guid: 8fcaa70def9cfdf47a9fc9ad9dbfd1da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.894335
