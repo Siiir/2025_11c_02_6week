@@ -8,7 +8,7 @@
 ### In the browser
 
 #### Play Online [[here]][hosted-game]
-Some browsers might have a significantly lower performance.
+Some browsers might have significantly lower performance.
 
 #### Host the game locally
 1. Download repo and host ./docs subfolder
