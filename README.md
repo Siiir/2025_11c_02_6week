@@ -1,4 +1,4 @@
-# Chopirate game - 6week PJATK project
+# Chopirate [TLDR: Click to play][hosted-game]
 
 ![Game Overview](./readme/GameOverview.png)
 ![Narrative and Objective](./readme/GameNarrativeAndObjective.png)
@@ -7,10 +7,10 @@
 
 ### In the browser
 
-### Online - WIP
-Will be available on GitHub Pages once teacher will allow to publish repo and make such browser release.
+#### Play Online [[here]][hosted-game]
+Some browsers might have significantly lower performance.
 
-### Self-hosted
+#### Host the game locally
 1. Download repo and host ./docs subfolder
 ```shell
 git clone git@github.com:Siiir/2025_11c_02_6week.git
@@ -19,8 +19,11 @@ python -m http.server 8000
 ```
 2. Go to http://localhost:8000 in your browser.
 
-### On desktop
-Download release for your device. This is found in GitHub releases subpage of the repo.
+### Play on desktop
+1. Download [release][gh-releases] for your device.
+2. Unpack the archive and open the folder.
+3. Run the executable file.  
+   Named after the game/project. E.g. `Chopirate.exe`, `Chopirate.app`, `6week.exe`.
 
 ## Start contributing to the repo from scratch
 
@@ -71,3 +74,5 @@ the specialized area **eXtended Reality, Games and Immersive Systems**
 in the department of **eXtended Reality and Immersive Systems**  
 at the **Polish-Japanese Academy of Information Technology.**
 
+[hosted-game]: https://siiir.github.io/2025_11c_02_6week/
+[gh-releases]: https://github.com/Siiir/2025_11c_02_6week/releases
